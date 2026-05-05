@@ -160,3 +160,13 @@ print(response.choices[0].message.content)
 <p align="center">
   <small>Proudly maintained by the 2026 AI Developer Community. Sponsored by <a href="https://www.aifast.club">www.aifast.club</a></small>
 </p>
+
+---
+
+### 🔗 相关仓库
+
+| 仓库 | 说明 |
+|:---|:---|
+| [📊 api-status](https://github.com/KKWANG4444/api-status) | 572 个模型实时状态看板 |
+| [📖 ai-api-proxy-china-guide](https://github.com/KKWANG4444/ai-api-proxy-china-guide) | AI 中转站完整指南 |
+| [🌐 www.aifast.club](https://www.aifast.club) | 官网 / 注册
