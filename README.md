@@ -170,3 +170,18 @@ print(response.choices[0].message.content)
 | [📊 api-status](https://github.com/KKWANG4444/api-status) | 572 个模型实时状态看板 |
 | [📖 ai-api-proxy-china-guide](https://github.com/KKWANG4444/ai-api-proxy-china-guide) | AI 中转站完整指南 |
 | [🌐 www.aifast.club](https://www.aifast.club) | 官网 / 注册
+
+
+---
+
+### 🚀 OpenClaw 一键部署 — 你的专属 AI 智能体
+
+[**OpenClaw**](https://www.aifast.club/openclaw) 现已上线 [www.aifast.club](https://www.aifast.club)！  
+一键部署你的 AI 智能体，无需服务器经验：
+
+- ✅ **多节点智能调度** — 自动路由到最优节点
+- ✅ **数据与访问隔离** — 安全可靠
+- ✅ **控制台一键管理** — 所见即所得
+- ✅ **全自动部署** — 从创建到上线仅需几分钟
+
+👉 **[立即体验 OpenClaw](https://www.aifast.club/openclaw)**
