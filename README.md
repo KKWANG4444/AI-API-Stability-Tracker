@@ -5,7 +5,7 @@
 [![实时状态](https://img.shields.io/badge/实时看板-在线-brightgreen)](https://kkwang4444.github.io/api-status/)
 [![www.aifast.club](https://img.shields.io/badge/国内直连-www.aifast.club-orange)](https://www.aifast.club)
 [![模型数量](https://img.shields.io/badge/模型-572-blue)](https://kkwang4444.github.io/api-status/models)
-[![更新](https://img.shields.io/badge/更新-2026--05--11-yellow)](https://github.com/KKWANG4444/Claude-4.7-GPT-5.5-API-Stability-Tracker)
+[![更新](https://img.shields.io/badge/更新-2026--05--23-yellow)](https://github.com/KKWANG4444/Claude-4.7-GPT-5.5-API-Stability-Tracker)
 
 ---
 
