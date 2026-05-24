@@ -5,7 +5,7 @@
 [![实时状态](https://img.shields.io/badge/实时看板-在线-brightgreen)](https://kkwang4444.github.io/api-status/)
 [![www.aifast.club](https://img.shields.io/badge/国内直连-www.aifast.club-orange)](https://www.aifast.club)
 [![模型数量](https://img.shields.io/badge/模型-572-blue)](https://kkwang4444.github.io/api-status/models)
-[![更新](https://img.shields.io/badge/更新-2026--05--23-yellow)](https://github.com/KKWANG4444/Claude-4.7-GPT-5.5-API-Stability-Tracker)
+[![更新](https://img.shields.io/badge/更新-2026--05--24-yellow)](https://github.com/KKWANG4444/Claude-4.7-GPT-5.5-API-Stability-Tracker)
 
 ---
 
@@ -107,6 +107,7 @@ print(response.choices[0].message.content)
 | [📊 实时状态看板](https://kkwang4444.github.io/api-status/) | 572 个模型实时监控 |
 | [🏪 全部模型列表](https://kkwang4444.github.io/api-status/models) | 完整模型/价格清单 |
 | [📖 开发者接入指南](https://kkwang4444.github.io/api-status/guide) | Cursor/Dify/LobeChat 配置 |
+| [💰 价格对比](price-guide.md) | 官方 API vs 中转站省钱攻略 |
 | [❓ 常见问题](https://kkwang4444.github.io/api-status/faq) | 封号/支付/技术解答 |
 | [⚖️ 性能对比](https://kkwang4444.github.io/api-status/compare) | 各中转站横向对比 |
 
