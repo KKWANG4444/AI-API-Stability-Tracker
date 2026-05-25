@@ -186,3 +186,18 @@ print(response.choices[0].message.content)
 - ✅ **全自动部署** — 从创建到上线仅需几分钟
 
 👉 **[立即体验 OpenClaw](https://www.aifast.club/openclaw)**
+
+---
+
+### 🤝 代理加盟 — 动动手指就能赚钱
+
+[**www.aifast.club/affiliate**](https://www.aifast.club/affiliate) 代理加盟已开放！只要你有人脉或推广渠道，就能获得用户充值分成：
+
+- ✅ **零成本启动** — 只需提供域名，按教程配置即可
+- ✅ **高度定制** — 可定制价格、首页展示、使用教程
+- ✅ **稳定分成** — 按用户充值金额获得持续收益
+- ✅ **适合人群** — 大学生/自媒体/兼职/自由职业者
+
+> 💡 **成功案例：** 校园社群推广月入3000+ · 教育网络稳定月入6000+ · 自媒体流量变现月入8000+
+
+👉 **[立即申请代理](https://www.aifast.club/affiliate)**
