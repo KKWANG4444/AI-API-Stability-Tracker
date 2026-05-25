@@ -148,7 +148,7 @@
 from openai import OpenAI
 
 client = OpenAI(
-    base_url="https://api.aifast.club/v1",
+    base_url="https://www.aifast.club/v1",
     api_key="你的APIKey"
 )
 
