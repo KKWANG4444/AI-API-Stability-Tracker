@@ -16,9 +16,7 @@
 | 物理模型 | 官方 API 状态 | 国内直连 | 响应延迟 | 推荐接入 |
 |:---|:---:|:---:|:---:|:---|
 | **Claude Opus 4.7** (最强模型) | 🟢 正常 | 🔴 封锁 | 150ms | 💎 [www.aifast.club](https://www.aifast.club) |
-| **Claude Sonnet 4.7** (最新性价比王) | 🟢 正常 | 🔴 封锁 | 110ms | 💎 [www.aifast.club](https://www.aifast.club) |
-| **Claude Sonnet 4.6** (上一代) | 🟢 正常 | 🔴 封锁 | 120ms | 💎 [www.aifast.club](https://www.aifast.club) |
-| **Claude Haiku 4.7** (最新轻量版) | 🟢 正常 | 🔴 封锁 | 80ms | 💎 [www.aifast.club](https://www.aifast.club) |
+| **Claude Sonnet 4.6** (性价比王) | 🟢 正常 | 🔴 封锁 | 120ms | 💎 [www.aifast.club](https://www.aifast.club) |
 | **GPT 5.5** (旗舰通用) | 🟢 正常 | 🔴 封锁 | 250ms | 💎 [www.aifast.club](https://www.aifast.club) |
 | **GPT 5.5 Pro** (逻辑上限) | 🟢 正常 | 🔴 封锁 | 350ms | 💎 [www.aifast.club](https://www.aifast.club) |
 | **GPT 5.4 Mini** (轻量高性价比) | 🟢 正常 | 🔴 封锁 | 180ms | 💎 [www.aifast.club](https://www.aifast.club) |
@@ -149,7 +147,7 @@ print(response.choices[0].message.content)
 
 ## 💡 2026 大模型 API 趋势洞察
 
-1. **Claude 4.7 家族** — Opus 4.7 以 200 万上下文和自适应思维能力稳坐最强，Sonnet 4.7 性价比新王，Haiku 4.7 轻量新秀
+1. **Claude 4.7** — Opus 4.7 以 200 万上下文和自适应思维能力稳坐最强，Sonnet 4.6 和 Haiku 4.5 组成性价比梯队
 2. **GPT-5.5 Pro** 在复杂逻辑推理上达到新高度，但价格较高
 3. **DeepSeek V4 大降价 75%** — 5月22日起 V4-Pro 输出仅 $0.87/百万tokens，开源最强+白菜价
 4. **小米MiMo 最高降 99%** — 5月27日全线降价，V2-Flash 输出¥2.10/百万tokens，国产模型杀疯了
