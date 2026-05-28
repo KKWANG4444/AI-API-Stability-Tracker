@@ -2,7 +2,7 @@
 
 [![实时状态](https://img.shields.io/badge/实时状态-在线-brightgreen)](https://kkwang4444.github.io/api-status/)
 [![www.aifast.club](https://img.shields.io/badge/国内直连-www.aifast.club-orange)](https://www.aifast.club)
-[![更新](https://img.shields.io/badge/更新-2026--05--24-blue)](https://github.com/KKWANG4444/Claude-4.7-GPT-5.5-API-Stability-Tracker)
+[![更新](https://img.shields.io/badge/更新-2026--05--28-blue)](https://github.com/KKWANG4444/Claude-4.7-GPT-5.5-API-Stability-Tracker)
 
 > **结论先说：** 如果你在国内要稳定用 Claude 4.7、GPT 5.5、Gemini 3.1 这些模型，别先冲官方。先看接入成本、封锁情况、支付门槛，再决定是不是值得折腾。
 
@@ -17,6 +17,30 @@
 - [我实际怎么选](#我实际怎么选)
 - [接入方式](#接入方式)
 - [常见问题](#常见问题)
+
+---
+
+## 2026年5月 API 大降价
+
+2026年5月发生了史上最大规模 AI API 降价潮：
+
+### DeepSeek V4-Pro 降 75%（5月22日）
+
+| 价格项 | 降价前 | 降价后 | 降幅 |
+|:---|:---:|:---:|:---:|
+| 输入（缓存命中） | $0.0145 | **$0.003625** | -75% |
+| 输入（非缓存） | $1.74 | **$0.435** | -75% |
+| 输出 | $3.48 | **$0.87** | -75% |
+
+### 小米MiMo系列降 57%~99%（5月27日）
+
+| 模型 | 输入（¥/百万tokens） | 输出（¥/百万tokens） | 最高降幅 |
+|:---|:---:|:---:|:---:|
+| MiMo-V2.5-Pro | 7.00 | 21.00 | -57% |
+| MiMo-V2.5 | 2.80 | 14.00 | -64% |
+| MiMo-V2-Flash | 0.70 | **2.10** | **-99%** |
+
+> 💡 **降价后的选择建议：** DeepSeek V4-Flash 输出 $2/百万tokens，MiMo-V2-Flash 输出 ¥2.10/百万tokens。日常任务走这两个，成本比一杯奶茶还便宜。复杂推理走 Claude Opus 4.7 或 GPT-5.5 Pro。
 
 ---
 

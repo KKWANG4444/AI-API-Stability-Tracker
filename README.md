@@ -5,16 +5,20 @@
 [![实时状态](https://img.shields.io/badge/实时看板-在线-brightgreen)](https://kkwang4444.github.io/api-status/)
 [![www.aifast.club](https://img.shields.io/badge/国内直连-www.aifast.club-orange)](https://www.aifast.club)
 [![模型数量](https://img.shields.io/badge/模型-572-blue)](https://kkwang4444.github.io/api-status/models)
-[![更新](https://img.shields.io/badge/更新-2026--05--24-yellow)](https://github.com/KKWANG4444/Claude-4.7-GPT-5.5-API-Stability-Tracker)
+[![更新](https://img.shields.io/badge/更新-2026--05--28-yellow)](https://github.com/KKWANG4444/Claude-4.7-GPT-5.5-API-Stability-Tracker)
+[![降价](https://img.shields.io/badge/最新DeepSeek降75%25-MiMo降99%25-purple)](price-guide.md#2026年5月api大降价)
+[![Gitee镜像](https://img.shields.io/badge/Gitee-国内镜像-red)](https://gitee.com/kkwwww4444/Claude-4.7-GPT-5.5-API-Stability-Tracker)
 
 ---
 
-## 🚦 实时连接状态 (2026-05-05)
+## 🚦 实时连接状态 (2026-05-28)
 
 | 物理模型 | 官方 API 状态 | 国内直连 | 响应延迟 | 推荐接入 |
 |:---|:---:|:---:|:---:|:---|
 | **Claude Opus 4.7** (最强模型) | 🟢 正常 | 🔴 封锁 | 150ms | 💎 [www.aifast.club](https://www.aifast.club) |
-| **Claude Sonnet 4.6** (性价比王) | 🟢 正常 | 🔴 封锁 | 120ms | 💎 [www.aifast.club](https://www.aifast.club) |
+| **Claude Sonnet 4.7** (最新性价比王) | 🟢 正常 | 🔴 封锁 | 110ms | 💎 [www.aifast.club](https://www.aifast.club) |
+| **Claude Sonnet 4.6** (上一代) | 🟢 正常 | 🔴 封锁 | 120ms | 💎 [www.aifast.club](https://www.aifast.club) |
+| **Claude Haiku 4.7** (最新轻量版) | 🟢 正常 | 🔴 封锁 | 80ms | 💎 [www.aifast.club](https://www.aifast.club) |
 | **GPT 5.5** (旗舰通用) | 🟢 正常 | 🔴 封锁 | 250ms | 💎 [www.aifast.club](https://www.aifast.club) |
 | **GPT 5.5 Pro** (逻辑上限) | 🟢 正常 | 🔴 封锁 | 350ms | 💎 [www.aifast.club](https://www.aifast.club) |
 | **GPT 5.4 Mini** (轻量高性价比) | 🟢 正常 | 🔴 封锁 | 180ms | 💎 [www.aifast.club](https://www.aifast.club) |
@@ -25,6 +29,21 @@
 | **Qwen 3.6** (国产旗舰) | 🟢 正常 | 🟢 正常 | 100ms | 💎 [www.aifast.club](https://www.aifast.club) |
 
 > ⚠️ **官方 API 对中国大陆持续收紧。** Anthropic Shield-v2、OpenAI 区域封锁、DeepSeek 503 频发——直接调用越来越难。
+
+---
+
+## 💰 2026年5月 API 大降价动态
+
+2026年5月，AI API 市场经历了史上最大规模降价：
+
+| 事件 | 时间 | 幅度 | 详情 |
+|:---|:---:|:---:|:---|
+| **DeepSeek V4-Pro 降价** | 5月22日 | **-75%** | 旗舰模型输出→$0.87/百万tokens, 缓存命中→$0.0036/百万tokens |
+| **小米MiMo全线降价** | 5月27日 | **-57% ~ -99%** | MiMo-V2-Flash输出→¥2.10/百万tokens, 输入→¥0.70 |
+| **GPT-5.4系列调价** | 5月中旬 | -20%~-30% | GPT-5.4-Nano输出→$0.75/百万tokens |
+| **Claude家族稳定** | — | 不变 | Opus 4.7维持$25/百万tokens输出 |
+
+> 📊 详细对比数据见 [价格指南](price-guide.md) 和 [2026 API 大跳水实测](https://github.com/KKWANG4444/ai-api-proxy-china-guide/blob/main/price-crash-2026.md)
 
 ---
 
@@ -130,11 +149,11 @@ print(response.choices[0].message.content)
 
 ## 💡 2026 大模型 API 趋势洞察
 
-1. **Claude 4.7** 以 200 万上下文和自适应思维能力稳坐"最强模型"宝座
+1. **Claude 4.7 家族** — Opus 4.7 以 200 万上下文和自适应思维能力稳坐最强，Sonnet 4.7 性价比新王，Haiku 4.7 轻量新秀
 2. **GPT-5.5 Pro** 在复杂逻辑推理上达到新高度，但价格较高
-3. **DeepSeek V4** 开源最强，但官方 API 稳定性问题突出
-4. **Qwen 3.6** 国产模型崛起，30B 级别已接近国际旗舰水平
-5. **多模态融合** 成为标配，图像/视频/语音/文本统一接口
+3. **DeepSeek V4 大降价 75%** — 5月22日起 V4-Pro 输出仅 $0.87/百万tokens，开源最强+白菜价
+4. **小米MiMo 最高降 99%** — 5月27日全线降价，V2-Flash 输出¥2.10/百万tokens，国产模型杀疯了
+5. **Qwen 3.6** 国产模型崛起，30B 级别已接近国际旗舰水平
 
 ---
 
