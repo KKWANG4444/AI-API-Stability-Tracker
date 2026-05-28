@@ -127,6 +127,7 @@ print(response.choices[0].message.content)
 | [💰 价格对比](price-guide.md) | 官方 API vs 中转站省钱攻略 |
 | [❓ 常见问题](https://kkwang4444.github.io/api-status/faq) | 封号/支付/技术解答 |
 | [⚖️ 性能对比](https://kkwang4444.github.io/api-status/compare) | 各中转站横向对比 |
+| [💰 2026 API大跳水实测](https://github.com/KKWANG4444/ai-api-proxy-china-guide/blob/main/price-crash-2026.md) | 小米降99%、DeepSeek降75%实测分析 |
 
 ---
 
@@ -134,9 +135,9 @@ print(response.choices[0].message.content)
 
 | 使用场景 | 推荐模型 | 特点 |
 |:---|:---|:---|
-| 编程/代码 | `claude-code` / `gpt-5-5` | 代码生成、重构、Debug |
-| 复杂推理 | `claude-opus-4-7` / `gpt-5-5-pro` | 逻辑分析、论文润色 |
-| 日常对话 | `gpt-5-5` / `gemini-3-flash` | 快速响应、通用问答 |
+| 编程/代码 | `claude-code` / `gpt-5.5` | 代码生成、重构、Debug |
+| 复杂推理 | `claude-opus-4-7` / `gpt-5.5-pro` | 逻辑分析、论文润色 |
+| 日常对话 | `gpt-5.5` / `gemini-3-flash` | 快速响应、通用问答 |
 | 高吞吐低成本 | `deepseek-v4-flash` / `gpt-5-4-nano` | 批量处理、数据清洗 |
 | 图像生成 | `gpt-image-2` / `midjourney-v7` | 文生图、图生图 |
 | 视频生成 | `kling-2.0` / `grok-videos` | AI 视频创作 |

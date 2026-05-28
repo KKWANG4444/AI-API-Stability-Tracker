@@ -213,3 +213,5 @@ print(resp.choices[0].message.content)
 如果你现在就在纠结“Claude 官方 API 值不值得折腾”，我的建议还是那句：
 
 **先看 [www.aifast.club](https://www.aifast.club)，把项目跑起来，再谈最优解。**
+
+[![Gitee镜像](https://img.shields.io/badge/Gitee-国内镜像-red)](https://gitee.com/kkwwww4444/Claude-4.7-GPT-5.5-API-Stability-Tracker)
