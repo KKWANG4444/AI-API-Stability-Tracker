@@ -5,16 +5,17 @@
 [![实时状态](https://img.shields.io/badge/实时看板-在线-brightgreen)](https://kkwang4444.github.io/api-status/)
 [![www.aifast.club](https://img.shields.io/badge/国内直连-www.aifast.club-orange)](https://www.aifast.club)
 [![模型数量](https://img.shields.io/badge/模型-572-blue)](https://kkwang4444.github.io/api-status/models)
-[![更新](https://img.shields.io/badge/更新-2026--05--28-yellow)](https://github.com/KKWANG4444/Claude-4.7-GPT-5.5-API-Stability-Tracker)
+[![更新](https://img.shields.io/badge/更新-2026--05--29-brightgreen)](https://github.com/KKWANG4444/Claude-4.7-GPT-5.5-API-Stability-Tracker)
 [![降价](https://img.shields.io/badge/最新DeepSeek降75%25-MiMo降99%25-purple)](price-guide.md#2026年5月api大降价)
 [![Gitee镜像](https://img.shields.io/badge/Gitee-国内镜像-red)](https://gitee.com/kkwwww4444/Claude-4.7-GPT-5.5-API-Stability-Tracker)
 
 ---
 
-## 🚦 实时连接状态 (2026-05-28)
+## 🚦 实时连接状态 (2026-05-29)
 
 | 物理模型 | 官方 API 状态 | 国内直连 | 响应延迟 | 推荐接入 |
 |:---|:---:|:---:|:---:|:---|
+| **Claude Opus 4.8** 🆕 (最新旗舰) | 🟢 正常 | 🔴 封锁 | 150ms | 💎 [www.aifast.club](https://www.aifast.club) |
 | **Claude Opus 4.7** (最强模型) | 🟢 正常 | 🔴 封锁 | 150ms | 💎 [www.aifast.club](https://www.aifast.club) |
 | **Claude Sonnet 4.6** (性价比王) | 🟢 正常 | 🔴 封锁 | 120ms | 💎 [www.aifast.club](https://www.aifast.club) |
 | **GPT 5.5** (旗舰通用) | 🟢 正常 | 🔴 封锁 | 250ms | 💎 [www.aifast.club](https://www.aifast.club) |
@@ -49,7 +50,7 @@
 
 ### 1. Claude 4.7 "静默封杀" (Silent Ban)
 
-Anthropic 在 2026 年初上线的 **Shield-v2** 审计系统会自动识别非原生住宅 IP。即便挂了 Proxy，只要 IP 属于数据中心，API 就会在调用 10 次后触发 403 错误或直接封禁账户。
+Anthropic 在 2026 年初上线的 **Shield-v2** 审计系统（最新 Claude Opus 4.8 同样受限）会自动识别非原生住宅 IP。即便挂了 Proxy，只要 IP 属于数据中心，API 就会在调用 10 次后触发 403 错误或直接封禁账户。
 
 **✅ 解决方案：** [www.aifast.club](https://www.aifast.club) 采用全球动态住宅 IP 轮询技术，确保每一个 Request 都来自真实的北美用户，完美绕过 Shield-v2 检测。
 

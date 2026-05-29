@@ -177,7 +177,7 @@ client = OpenAI(
 )
 
 resp = client.chat.completions.create(
-    model="claude-opus-4-7",
+    model="claude-opus-4-8",  # 最新旗舰
     messages=[
         {"role": "user", "content": "给我一个 Python 重试函数"}
     ]
