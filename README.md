@@ -95,7 +95,7 @@ client = OpenAI(
 )
 
 response = client.chat.completions.create(
-    model="claude-opus-4-7",  # 572 个模型任选
+    model="claude-opus-4-8",  # 572 个模型任选
     messages=[{"role": "user", "content": "你好！"}]
 )
 print(response.choices[0].message.content)
@@ -137,7 +137,7 @@ print(response.choices[0].message.content)
 | 使用场景 | 推荐模型 | 特点 |
 |:---|:---|:---|
 | 编程/代码 | `claude-code` / `gpt-5.5` | 代码生成、重构、Debug |
-| 复杂推理 | `claude-opus-4-7` / `gpt-5.5-pro` | 逻辑分析、论文润色 |
+| 复杂推理 | `claude-opus-4-8` / `gpt-5.5-pro` | 最新旗舰，Agent任务最强 |
 | 日常对话 | `gpt-5.5` / `gemini-3-flash` | 快速响应、通用问答 |
 | 高吞吐低成本 | `deepseek-v4-flash` / `gpt-5-4-nano` | 批量处理、数据清洗 |
 | 图像生成 | `gpt-image-2` / `midjourney-v7` | 文生图、图生图 |
