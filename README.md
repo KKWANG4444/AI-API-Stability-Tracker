@@ -220,3 +220,13 @@ print(response.choices[0].message.content)
 > 💡 **成功案例：** 校园社群推广月入3000+ · 教育网络稳定月入6000+ · 自媒体流量变现月入8000+
 
 👉 **[立即申请代理](https://www.aifast.club/affiliate)**
+
+---
+### 💬 加入社区
+
+> 📱 **aifast.club 用户交流群**  
+> [Telegram 群组](https://t.me/+WYrmge-lYRFhOTFl) — 交流 API 使用心得、模型动态、问题互助
+
+---
+
+*📖 更多内容：[AI中转站完整指南](https://github.com/KKWANG4444/ai-api-china) · [实时状态看板](https://github.com/KKWANG4444/api-status) · [AI中转站推荐](https://github.com/KKWANG4444/ai-api-proxy-china-guide)*
