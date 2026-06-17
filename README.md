@@ -6,8 +6,9 @@
 
 [![实时看板](https://img.shields.io/badge/实时看板-在线-brightgreen)](https://kkwang4444.github.io/api-status/)
 [![模型数](https://img.shields.io/badge/模型-572-blue)](https://kkwang4444.github.io/api-status/models)
-[![更新](https://img.shields.io/badge/更新-2026--06--03-brightgreen)](https://github.com/KKWANG4444/Claude-4.7-GPT-5.5-API-Stability-Tracker)
+[![更新](https://img.shields.io/badge/更新-2026--06--17-brightgreen)](https://github.com/KKWANG4444/Claude-4.7-GPT-5.5-API-Stability-Tracker)ub.com/KKWANG4444/Claude-4.7-GPT-5.5-API-Stability-Tracker)
 [![Gitee](https://img.shields.io/badge/Gitee-国内镜像-red)](https://gitee.com/kkwwww4444/Claude-4.7-GPT-5.5-API-Stability-Tracker)
+[![中转指南](https://img.shields.io/badge/中转指南-国内直连方案-green)](https://github.com/KKWANG4444/ai-api-proxy-china-guide)www4444/Claude-4.7-GPT-5.5-API-Stability-Tracker)
 
 ---
 
