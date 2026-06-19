@@ -1,6 +1,6 @@
 # 2026旗舰大模型API稳定性实测追踪
 
-> 一个跑了半年的实测项目：Claude Opus 4.8/4.7 · GPT-5.5 Pro · DeepSeek V4 Flash/Pro · Gemini 3.1 · Grok 4.20
+> 一个跑了半年的实测项目：Claude Opus 4.8/4.7 · GPT-5.5 Pro · DeepSeek V4 Flash/Pro · Gemini 3.1 Pro · Grok 4.20
 >
 > 数据每5分钟更新 · 覆盖全球7个观测节点 · 572个模型在列
 
