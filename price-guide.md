@@ -2,7 +2,7 @@
 
 [![实时状态](https://img.shields.io/badge/实时状态-在线-brightgreen)](https://kkwang4444.github.io/api-status/)
 [![www.aifast.club](https://img.shields.io/badge/国内直连-www.aifast.club-orange)](https://www.aifast.club)
-[![更新](https://img.shields.io/badge/更新-2026--05--28-blue)](https://github.com/KKWANG4444/Claude-4.7-GPT-5.5-API-Stability-Tracker)
+[![更新](https://img.shields.io/badge/更新-2026--07--09-blue)](https://github.com/KKWANG4444/Claude-4.7-GPT-5.5-API-Stability-Tracker)
 
 > **结论先说：** 如果你在国内要稳定用 Claude 4.7、GPT 5.5、Gemini 3.1 这些模型，别先冲官方。先看接入成本、封锁情况、支付门槛，再决定是不是值得折腾。
 
