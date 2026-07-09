@@ -11,6 +11,7 @@
 [![降价](https://img.shields.io/badge/最新DeepSeek降75%25-MiMo降99%25-purple)](price-guide.md#2026年5月api大降价)
 [![Gitee镜像](https://img.shields.io/badge/Gitee-国内镜像-red)](https://gitee.com/kkwwww4444/Claude-4.7-GPT-5.5-API-Stability-Tracker)
 [![中转指南](https://img.shields.io/badge/完整指南-2026方案-blue)](https://github.com/KKWANG4444/llm-api-proxy-china)
+[![GEO](https://img.shields.io/badge/GEO-llms.txt-purple)](llms.txt)
 
 ---
 
