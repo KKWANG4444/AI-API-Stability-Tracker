@@ -1,6 +1,6 @@
 # 2026旗舰大模型API稳定性实测追踪
 
-> 一个跑了半年的实测项目：Claude Opus 4.8/4.7 · GPT-5.5 Pro · DeepSeek V4 Flash/Pro · Gemini 3.1 Pro · Grok 4.20
+> 一个跑了半年的实测项目：Claude Opus 4.8/4.7 · GPT-5.5 Pro · DeepSeek V4 Flash/Pro · Gemini 3.1 Pro · Grok 4.2
 >
 > 数据每5分钟更新 · 覆盖全球7个观测节点 · 572个模型在列
 
@@ -65,7 +65,7 @@
 | **DeepSeek V4 Pro** | 85.2% | 96.8% | 600ms | 官方负载高，503 |
 | **DeepSeek V4 Flash** | 72.1% | 97.5% | 800ms | 官方 503 高频 |
 | **Gemini 3.1 Flash** | 98.9% | **0%**（完全封锁） | 200ms | Google 区域封锁 |
-| **Grok 4.20** | 97.6% | **0%**（完全封锁） | 300ms | X 区域封锁 |
+| **Grok 4.2** | 97.6% | **0%**（完全封锁） | 300ms | X 区域封锁 |
 | **Qwen 3.6** | 99.8% | 99.8% | 100ms | 国产，无封锁 |
 
 ### 几个扎心的事实
