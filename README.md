@@ -9,7 +9,7 @@
 
 [![实时状态](https://img.shields.io/badge/实时看板-在线-brightgreen)](https://kkwang4444.github.io/api-status/)
 [![www.aifast.club](https://img.shields.io/badge/国内直连-www.aifast.club-orange)](https://www.aifast.club)
-[![模型数量](https://img.shields.io/badge/模型-572-blue)](https://kkwang4444.github.io/api-status/models)
+[![模型数量](https://img.shields.io/badge/模型-当前目录-blue)](https://kkwang4444.github.io/api-status/models)
 [![更新](https://img.shields.io/badge/更新-2026--07--12-brightgreen)](https://github.com/KKWANG4444/Claude-4.7-GPT-5.5-API-Stability-Tracker)
 [![降价](https://img.shields.io/badge/最新DeepSeek降75%25-MiMo降99%25-purple)](price-guide.md#2026年5月api大降价)
 [![Gitee镜像](https://img.shields.io/badge/Gitee-国内镜像-red)](https://gitee.com/kkwwww4444/Claude-4.7-GPT-5.5-API-Stability-Tracker)
@@ -64,7 +64,7 @@
 
 **1. DeepSeek V4 的 503 问题比想象中严重。**
 
-官方 Flash 模型可用率只有 72%，Pro 也只有 85%。实测发现每天北京时间 14:00-17:00 和 20:00-23:00 是两个高峰拥堵期，503 率能飙到 40% 以上。这跟 DeepSeek 用户量暴涨有关——V4 发布后涌入了大量新用户，官方集群扛不住。
+不同模型在不同时段的可用性会变化，不能把单次观察当作长期 SLA。生产接入前应从目标网络实测并配置重试与降级。
 
 **2. Claude 和 GPT 在国内是"完全不可用"状态。**
 
@@ -72,7 +72,7 @@
 
 **3. 国产模型最大的优势不是能力，是可用性。**
 
-Qwen3.7-Max 的可用率 99.8%，延迟 100ms 不到。你用它做生产环境，基本不用担心掉链子。但能力天花板确实还在那——复杂逻辑推理、长上下文、代码生成，跟国际旗舰还有差距。
+Qwen3.7-Max 已在模型广场，实际可用性和延迟应从目标网络实测。
 
 ---
 
@@ -239,7 +239,7 @@ API Key: your-api-key
 
 | 场景 | 推荐 | 理由 |
 |:---|:---|:---|
-| 深度分析 | **Claude Opus 4.8** | 200万上下文，长链推理最强 |
+| 深度分析 | **Claude Opus 4.8** | 长上下文，长链推理最强 |
 | 结构化推理 | **GPT-5.5 Pro** | 数学和逻辑好 |
 | 数据清洗 | **DeepSeek V4 Flash / GPT-5.4 Nano** | 成本极低 |
 | Agent 任务 | **Claude Opus 4.8 / GPT-5.5** | 工具调用稳定 |
@@ -250,7 +250,7 @@ API Key: your-api-key
 |:---|:---|:---|
 | 通用问答 | **GPT-5.5** | 快，中文好，便宜 |
 | 长文本写作 | **Claude Opus 4.8** | 上下文长，连贯性好 |
-| 国产合规 | **Qwen3.7-Max / GLM-5** | 数据不出境，可用率高 |
+| 国产合规 | **Qwen3.7-Max / GLM-5** | 适合国产模型需求；数据合规需结合供应商与部署区域确认 |
 | 轻量高频 | **GPT-5.4 Nano / Gemini 3.1 Flash** | 响应快，价格低 |
 
 ### 一句话总结
@@ -290,7 +290,7 @@ API Key: your-api-key
 
 ### Q: DeepSeek V4 降价后是不是首选？
 
-看场景。如果你做的是大批量、低质量要求、能容忍重试的任务，DeepSeek V4 Flash 性价比无敌。但如果你要做生产环境的关键任务，它 72% 的官方可用率是个雷——建议走中转或者其他容错方案。
+生产任务应根据实时请求结果配置重试、限流和多模型容错。
 
 ### Q: 这个 README 还会更新吗？
 
@@ -301,7 +301,7 @@ API Key: your-api-key
 ## 后续计划
 
 - [x] 基础监控体系上线（2026年4月）
-- [x] 572 个模型全覆盖
+- [x] 模型广场当前目录全覆盖
 - [x] 价格追踪与降价通知
 - [ ] Opus 4.8 vs GPT-5.5 Pro 持续对比（进行中）
 - [ ] 增加更多国内观测节点
@@ -315,7 +315,7 @@ API Key: your-api-key
 | 资源 | 说明 |
 |:---|:---|
 | [🌐 www.aifast.club](https://www.aifast.club) | 国内直连 API 接入平台 |
-| [📊 实时看板](https://kkwang4444.github.io/api-status/) | 572 个模型状态观察 |
+| [📊 实时看板](https://kkwang4444.github.io/api-status/) | 模型广场当前目录状态观察 |
 | [📖 接入指南](https://kkwang4444.github.io/api-status/guide) | Cursor/Dify/LobeChat 配置教程 |
 | [💰 价格对比](price-guide.md) | 官方 vs 中转站价格详细对比 |
 | [⚡ OpenClaw 一键部署](https://www.aifast.club/openclaw) | 把你的 AI 智能体跑起来 |

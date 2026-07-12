@@ -9,7 +9,7 @@
 
 [![Live Status](https://img.shields.io/badge/Live%20Status-Online-brightgreen)](https://kkwang4444.github.io/api-status/)
 [![Updated](https://img.shields.io/badge/Updated-2026--07--12-blue)](https://github.com/KKWANG4444/Claude-4.7-GPT-5.5-API-Stability-Tracker)
-[![Models](https://img.shields.io/badge/Models-572-FF6B35)](https://www.aifast.club)
+[![Models](https://img.shields.io/badge/Models-current-FF6B35)](https://www.aifast.club)
 
 > **A public collection of real-world API availability observations:** Claude Opus 4.8/4.7 · GPT-5.5 Pro · DeepSeek V4 Flash/Pro · Gemini 3.1 Pro · Grok 4.2
 > 
@@ -79,7 +79,7 @@ response = client.chat.completions.create(
 
 ## 🏗️ Related Projects
 
-- **[API Status Monitor](https://github.com/KKWANG4444/api-status)** — Live 572-model dashboard
+- **[API Status Monitor](https://github.com/KKWANG4444/api-status)** — Live marketplace model dashboard
 - **[AI API Proxy Guide](https://github.com/KKWANG4444/ai-api-proxy-china-guide)** — Complete setup guide
 - **[LLM API Proxy China](https://github.com/KKWANG4444/llm-api-proxy-china)** — Full model list
 - **[Gateway: AIFast Club](https://www.aifast.club)** — One key for all models
