@@ -1,4 +1,4 @@
-# AI API Stability Tracker — 6-Month Real-World Test
+# AI API Stability Tracker — Public Availability Observations
 
 [![中文](https://img.shields.io/badge/🇨🇳-中文-red)](README.md)
 [![English](https://img.shields.io/badge/🇬🇧-English-blue)](README_EN.md)
@@ -7,9 +7,9 @@
 [![Updated](https://img.shields.io/badge/Updated-2026--07--12-blue)](https://github.com/KKWANG4444/Claude-4.7-GPT-5.5-API-Stability-Tracker)
 [![Models](https://img.shields.io/badge/Models-572-FF6B35)](https://www.aifast.club)
 
-> **A 6-month real-world stability test project:** Claude Opus 4.8/4.7 · GPT-5.5 Pro · DeepSeek V4 Flash/Pro · Gemini 3.1 Pro · Grok 4.2
+> **A public collection of real-world API availability observations:** Claude Opus 4.8/4.7 · GPT-5.5 Pro · DeepSeek V4 Flash/Pro · Gemini 3.1 Pro · Grok 4.2
 > 
-> Data updates every 5 minutes · 7 global observation nodes · 572 models tracked
+> Published observations are snapshots; model availability and latency vary by node, network, and time
 
 ## 🎯 Why This Project
 
@@ -20,27 +20,17 @@ Official API status pages often don't reflect real-world performance — especia
 - **China accessibility** — Which models work from mainland China?
 - **Provider reliability** — Which providers have the most uptime?
 
-## 📊 Flagship Model Stability Data
+## 📊 Flagship Model Availability Snapshot
 
-| Model | Success Rate | China Access | Latency | Status |
-|:---|:---:|:---:|:---:|:---:|
-| **Claude Opus 4.8** | 99.2% | 🔴 Blocked | 150ms | 🟢 |
-| **Claude Sonnet 5** 🆕 | 99.5% | 🔴 Blocked | 100ms | 🟢 |
-| **GPT-5.6 Sol** 🆕 | 98.8% | 🔴 Blocked | 350ms | 🟢 |
-| **GPT-5.5 Pro** | 99.1% | 🔴 Blocked | 350ms | 🟢 |
-| **DeepSeek V4 Flash** | 94.3% | 🟢 Direct | 800ms | 🟡 |
-| **Grok 4.5** 🆕 | 97.6% | 🔴 Blocked | 280ms | 🟢 |
-| **Gemini 3.1 Flash** | 99.3% | 🔴 Blocked | 200ms | 🟢 |
-
-*Data updated: 2026-07-10. [View live dashboard](https://kkwang4444.github.io/api-status/)*
+The repository publishes periodic observations rather than a guaranteed service-level report. Availability and latency vary by provider, model, test node, network, and time. For current conditions, run a request from your own environment and consult the [live status dashboard](https://kkwang4444.github.io/api-status/).
 
 ## 🔑 Key Findings
 
 ### 1. Official API vs. Gateway Performance
 
 Without a proxy/gateway, most Western AI APIs are **unreachable** from China:
-- OpenAI → **100% blocked** from Chinese IPs
-- Anthropic → Shield-v2 blocks within 10 calls
+- OpenAI → direct availability may be limited on some mainland China networks
+- Anthropic → availability may vary by region and network environment
 - xAI → Region-locked
 
 With a gateway (e.g., [aifast.club](https://www.aifast.club)):

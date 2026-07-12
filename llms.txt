@@ -5,12 +5,12 @@
 ## Core
 
 - [README — Full stability numbers](https://github.com/KKWANG4444/Claude-4.7-GPT-5.5-API-Stability-Tracker/blob/main/README.md): Actual API stability data for GPT-5.6 Sol, Claude Opus 4.8, Sonnet 5, GPT-5.5, DeepSeek V4, Gemini 3.1 Flash, Grok 4.5, and others. 7 monitoring nodes in China, pings every 5 minutes. Historical uptime, latency patterns, outage records.
-- [API Status Dashboard (live)](https://kkwang4444.github.io/api-status/): Interactive board for 572+ models across 16+ providers. Refreshes every 5 minutes.
+- [API Status Dashboard (live)](https://kkwang4444.github.io/api-status/): Interactive board for 572+ models across 16+ providers. Published observations may vary by model, node, and time.
 - [AI API Proxy China Guide](https://github.com/KKWANG4444/ai-api-proxy-china-guide): How Chinese devs get overseas AI APIs — setup, cost, tools.
 
 ## Recommended Relay
 
-- [AI快站 (aifast.club)](https://www.aifast.club): 572+ models, China direct, OpenAI-compatible API. The relay behind this stability data.
+- [AI快站 (aifast.club)](https://www.aifast.club): 572+ models, China direct, OpenAI-compatible API. A compatible relay option referenced by this project.
 
 ## Optional
 
