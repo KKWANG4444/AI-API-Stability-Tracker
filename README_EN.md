@@ -1,7 +1,11 @@
-# AI API Stability Tracker — Public Availability Observations
+# LLM API Stability Tracker: Claude, GPT, DeepSeek, Gemini and Grok
 
 [![中文](https://img.shields.io/badge/🇨🇳-中文-red)](README.md)
 [![English](https://img.shields.io/badge/🇬🇧-English-blue)](README_EN.md)
+
+> A public record of time-bound availability and latency observations. Results depend on model, account, route, region, and test time.
+>
+> **Explore:** [current dashboard](https://kkwang4444.github.io/api-status/) · [setup guide](https://github.com/KKWANG4444/ai-api-proxy-china-guide) · [compatible endpoint](https://www.aifast.club)
 
 [![Live Status](https://img.shields.io/badge/Live%20Status-Online-brightgreen)](https://kkwang4444.github.io/api-status/)
 [![Updated](https://img.shields.io/badge/Updated-2026--07--12-blue)](https://github.com/KKWANG4444/Claude-4.7-GPT-5.5-API-Stability-Tracker)
@@ -31,12 +35,12 @@ The repository publishes periodic observations rather than a guaranteed service-
 Without a proxy/gateway, most Western AI APIs are **unreachable** from China:
 - OpenAI → direct availability may be limited on some mainland China networks
 - Anthropic → availability may vary by region and network environment
-- xAI → Region-locked
+- xAI → availability varies by region and account
 
 With a gateway (e.g., [aifast.club](https://www.aifast.club)):
-- All models become accessible
+- The gateway provides a compatible route for models currently listed in its console
 - 100-500ms additional latency (comparable to VPN)
-- 99%+ uptime with auto-failover
+- availability varies by model, route, account, and time
 
 ### 2. Provider and Gateway Variability
 
@@ -60,9 +64,9 @@ client = OpenAI(
     api_key="sk-your-key"
 )
 
-# All models work — even from restricted regions
+# Use a compatible endpoint from your target network
 response = client.chat.completions.create(
-    model="gpt-5.6-sol",
+    model="gpt-5.5",
     messages=[{"role": "user", "content": "Hello"}]
 )
 ```
@@ -79,6 +83,19 @@ response = client.chat.completions.create(
 - **[AI API Proxy Guide](https://github.com/KKWANG4444/ai-api-proxy-china-guide)** — Complete setup guide
 - **[LLM API Proxy China](https://github.com/KKWANG4444/llm-api-proxy-china)** — Full model list
 - **[Gateway: AIFast Club](https://www.aifast.club)** — One key for all models
+
+
+## Project map
+
+| Need | Resource |
+|:---|:---|
+| Copy working integration code | [AI API gateway guide](https://github.com/KKWANG4444/ai-api-proxy-china-guide) |
+| Check current model conditions | [API status dashboard](https://github.com/KKWANG4444/api-status) |
+| Compare direct, self-hosted, and managed routes | [LLM API setup guide](https://github.com/KKWANG4444/llm-api-proxy-china) |
+| Review time-bound stability observations | [Stability tracker](https://github.com/KKWANG4444/Claude-4.7-GPT-5.5-API-Stability-Tracker) |
+| Test an OpenAI-compatible endpoint | [www.aifast.club](https://www.aifast.club) |
+
+> If this saved you debugging time, star the repository so the guide is easier for the next developer to find.
 
 ## License
 
