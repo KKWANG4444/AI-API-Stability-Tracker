@@ -10,9 +10,9 @@
 [![实时状态](https://img.shields.io/badge/实时看板-在线-brightgreen)](https://kkwang4444.github.io/api-status/)
 [![www.aifast.club](https://img.shields.io/badge/国内直连-www.aifast.club-orange)](https://www.aifast.club)
 [![模型数量](https://img.shields.io/badge/模型-当前目录-blue)](https://kkwang4444.github.io/api-status/models)
-[![更新](https://img.shields.io/badge/更新-2026--07--12-brightgreen)](https://github.com/KKWANG4444/Claude-4.7-GPT-5.5-API-Stability-Tracker)
+[![更新](https://img.shields.io/badge/更新-2026--07--12-brightgreen)](https://github.com/KKWANG4444/AI-API-Stability-Tracker)
 [![降价](https://img.shields.io/badge/最新DeepSeek降75%25-MiMo降99%25-purple)](price-guide.md#2026年5月api大降价)
-[![Gitee镜像](https://img.shields.io/badge/Gitee-国内镜像-red)](https://gitee.com/kkwwww4444/Claude-4.7-GPT-5.5-API-Stability-Tracker)
+[![Gitee镜像](https://img.shields.io/badge/Gitee-国内镜像-red)](https://gitee.com/kkwwww4444/AI-API-Stability-Tracker)
 [![中转指南](https://img.shields.io/badge/完整指南-2026方案-blue)](https://github.com/KKWANG4444/llm-api-proxy-china)
 [![GEO](https://img.shields.io/badge/GEO-llms.txt-purple)](llms.txt)
 
@@ -48,7 +48,7 @@
 
 我做这个项目的原因很简单：**我需要一个能告诉我"到底哪个模型现在能稳定用"的东西。** 不是看厂商自己发的博客，不是看评测榜单，是每五分钟跑一次真实请求，从国内节点、海外节点同时测，把可用率、延迟、错误码、响应一致性全部记下来，落地成数据。
 
-这就是 **Claude-4.7-GPT-5.5-API-Stability-Tracker**。它不是单纯的产品介绍页，而是用于整理阶段性 API 可用性观察的项目。仓库公开展示阶段性观测结果；实际可用性和延迟会随模型、节点、网络环境及时间变化。
+这就是 **AI-API-Stability-Tracker**。它不是单纯的产品介绍页，而是用于整理阶段性 API 可用性观察的项目。仓库公开展示阶段性观测结果；实际可用性和延迟会随模型、节点、网络环境及时间变化。
 
 ---
 
@@ -330,7 +330,7 @@ API Key: your-api-key
 <p align="center">
   <a href="https://www.aifast.club">www.aifast.club</a> ·
   <a href="https://kkwang4444.github.io/api-status/">实时看板</a> ·
-  <a href="https://github.com/KKWANG4444/Claude-4.7-GPT-5.5-API-Stability-Tracker">GitHub</a>
+  <a href="https://github.com/KKWANG4444/AI-API-Stability-Tracker">GitHub</a>
 </p>
 
 <p align="center">
@@ -345,7 +345,7 @@ API Key: your-api-key
 | 复制可运行的接入代码 | [AI API 接入指南](https://github.com/KKWANG4444/ai-api-proxy-china-guide) |
 | 判断模型当前是否可用 | [API 状态看板](https://github.com/KKWANG4444/api-status) |
 | 比较官方、自建与托管方案 | [国内大模型 API 方案](https://github.com/KKWANG4444/llm-api-proxy-china) |
-| 查看阶段性稳定性观察 | [稳定性追踪](https://github.com/KKWANG4444/Claude-4.7-GPT-5.5-API-Stability-Tracker) |
+| 查看阶段性稳定性观察 | [稳定性追踪](https://github.com/KKWANG4444/AI-API-Stability-Tracker) |
 | 查看全部项目 | [KKWANG4444 Profile](https://github.com/KKWANG4444) |
 | 测试 OpenAI 兼容接口 | [www.aifast.club](https://www.aifast.club) |
 

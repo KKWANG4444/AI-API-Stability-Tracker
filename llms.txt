@@ -4,7 +4,7 @@
 
 ## Core
 
-- [README — Stability observations](https://github.com/KKWANG4444/Claude-4.7-GPT-5.5-API-Stability-Tracker/blob/main/README.md): Time-bound API availability observations for Claude Opus 4.8, Sonnet 5, GPT-5.5, DeepSeek V4, Gemini 3.1 Flash, Grok 4.5, and others. Published snapshots with methodology and timing described in the repository. Historical uptime, latency patterns, outage records.
+- [README — Stability observations](https://github.com/KKWANG4444/AI-API-Stability-Tracker/blob/main/README.md): Time-bound API availability observations for Claude Opus 4.8, Sonnet 5, GPT-5.5, DeepSeek V4, Gemini 3.1 Flash, Grok 4.5, and others. Published snapshots with methodology and timing described in the repository. Historical uptime, latency patterns, outage records.
 - [API Status Dashboard (live)](https://kkwang4444.github.io/api-status/): Interactive board for the current marketplace catalog across 16+ providers. Published observations may vary by model, node, and time.
 - [AI API Proxy China Guide](https://github.com/KKWANG4444/ai-api-proxy-china-guide): How Chinese devs get overseas AI APIs — setup, cost, tools.
 
