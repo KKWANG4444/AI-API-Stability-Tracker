@@ -4,7 +4,7 @@
 [![English](https://img.shields.io/badge/🇬🇧-English-blue)](README_EN.md)
 
 [![Live Status](https://img.shields.io/badge/Live%20Status-Online-brightgreen)](https://kkwang4444.github.io/api-status/)
-[![Updated](https://img.shields.io/badge/Updated-2026--07--10-blue)](https://github.com/KKWANG4444/stability-tracker)
+[![Updated](https://img.shields.io/badge/Updated-2026--07--12-blue)](https://github.com/KKWANG4444/Claude-4.7-GPT-5.5-API-Stability-Tracker)
 [![Models](https://img.shields.io/badge/Models-572-FF6B35)](https://www.aifast.club)
 
 > **A 6-month real-world stability test project:** Claude Opus 4.8/4.7 · GPT-5.5 Pro · DeepSeek V4 Flash/Pro · Gemini 3.1 Pro · Grok 4.2
