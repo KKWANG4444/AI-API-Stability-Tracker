@@ -38,19 +38,9 @@ With a gateway (e.g., [aifast.club](https://www.aifast.club)):
 - 100-500ms additional latency (comparable to VPN)
 - 99%+ uptime with auto-failover
 
-### 2. DeepSeek Official: The Unreliable Option
+### 2. Provider and Gateway Variability
 
-| Metric | Official API | Via Gateway |
-|:---|:---:|:---:|
-| Uptime | ~75% | 99%+ |
-| Peak 503 rate | 15-20% | <0.5% |
-| Average latency | 500ms | 600-800ms |
-
-### 3. Best Performing Gateways
-
-| Gateway | Avg Latency | 99th Percentile | Failure Rate |
-|:---|:---:|:---:|:---:|
-| **aifast.club** | 120ms | 450ms | 0.3% |
+Provider and gateway performance varies by model, region, request size, node, and time. Fixed latency and failure-rate claims have been removed; benchmark from your own environment before production use.
 
 ## 🚀 Using This Data
 
