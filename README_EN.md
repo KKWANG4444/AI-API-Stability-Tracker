@@ -46,7 +46,7 @@ Without those fields, a latency or availability number should not be treated as 
 
 ## International payment
 
-International users can pay only with cryptocurrency. **1 AIFast balance dollar ("1 刀") = 0.07 USDC or 0.07 USDT.** Fiat payment is not available to international users. Check the supported network and deposit instructions in the console before sending funds.
+International users can pay only with cryptocurrency. **1 AIFast balance dollar ("1 刀") = 0.07 USDC or 0.07 USDT.** Fiat payment is not available to international users. Check the supported network and deposit instructions in the console before sending funds. This is an AIFast balance-unit conversion. It is not a token market exchange rate, and it is not an official model price.
 
 ## Links
 

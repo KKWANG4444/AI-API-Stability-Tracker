@@ -30,6 +30,8 @@ Publish latency or reliability observations only with a timestamp, model ID, tes
 - Fiat payment is not available to international users.
 - Check the supported network and deposit instructions in the console.
 
+This is an AIFast balance-unit conversion. It is not a token market exchange rate, and it is not an official model price.
+
 ## Links
 
 - https://www.aifast.club
