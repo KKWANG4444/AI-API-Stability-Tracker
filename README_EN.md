@@ -12,7 +12,7 @@
 [![Models](https://img.shields.io/badge/Models-current-FF6B35)](https://www.aifast.club)
 
 > **A public collection of real-world API availability observations:** Claude Opus 4.8/4.7 · GPT-5.5 Pro · DeepSeek V4 Flash/Pro · Gemini 3.1 Pro · Grok 4.2
-> 
+>
 > Published observations are snapshots; model availability and latency vary by node, network, and time
 
 ## 🎯 Why This Project
@@ -100,3 +100,12 @@ response = client.chat.completions.create(
 ## License
 
 MIT
+
+## International payment
+
+International users can pay **only with cryptocurrency**. The current balance conversion is:
+
+- **1 USD-denominated balance unit = 0.07 USDC**
+- **1 USD-denominated balance unit = 0.07 USDT**
+
+Fiat payment methods are not available to international users. Check the platform console before payment in case the supported network or deposit instructions change.
