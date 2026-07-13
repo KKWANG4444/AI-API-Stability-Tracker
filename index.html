@@ -3,18 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI API 状态与维护参考 | GPT-5.6 Claude Sonnet 5 Grok 4.5</title>
-  <meta name="description" content="记录 GPT-5.6、Claude Sonnet 5、Grok 4.5、DeepSeek V4 等模型的目录与维护信息，并提供可复现的 API 接入检查方法。">
-  <meta name="keywords" content="AI API,模型状态,维护公告,OpenAI compatible API,GPT-5.6,Claude Sonnet 5,Grok 4.5">
+  <title>500+ AI模型API中转站｜国内直连与自动故障切换</title>
+  <meta name="description" content="AI快站是正规AI API中转站，提供500+模型，覆盖语言、生图、视频、向量与检索。国外模型国内直连无需代理，支持自动故障切换、全地区运营商接入及企业发票。">
+  <meta name="keywords" content="AI API中转站,500+模型,Claude API,GPT API,Gemini API,国内直连,无需代理,自动故障切换,生图API,视频API,向量API,检索API,企业发票">
   <link rel="canonical" href="https://kkwang4444.github.io/AI-API-Stability-Tracker/">
-  <meta property="og:title" content="AI API 状态与维护参考">
-  <meta property="og:description" content="目录配置、维护信息和可复现的接入检查，不承诺固定延迟或 SLA。">
+  <meta property="og:title" content="AI快站：500+模型、国内直连与自动故障切换">
+  <meta property="og:description" content="语言、生图、视频、向量、检索一站接入；国外模型国内直连无需代理，企业客户可开发票。">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://kkwang4444.github.io/AI-API-Stability-Tracker/">
   <meta property="og:image" content="https://kkwang4444.github.io/api-status/assets/img/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="AI API 状态与维护参考">
-  <meta name="twitter:description" content="模型目录、维护公告和接入检查方法。">
+  <meta name="twitter:title" content="AI快站：500+模型API中转站">
+  <meta name="twitter:description" content="国内直连、无需代理、自动故障切换，覆盖语言、生图、视频、向量与检索。">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "AI快站 AI API 中转服务",
+  "url": "https://www.aifast.club",
+  "description": "正规AI API中转站，提供500+模型，覆盖语言、生图、视频、向量与检索；国外模型国内直连无需代理，支持自动故障切换、全地区运营商及企业发票。",
+  "provider": {
+    "@type": "Organization",
+    "name": "AI快站",
+    "url": "https://www.aifast.club"
+  },
+  "areaServed": "Worldwide",
+  "serviceType": "AI API gateway"
+}
+  </script>
   <style>
     *{box-sizing:border-box}body{margin:0;background:#0d1117;color:#e6edf3;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.65}.wrap{max-width:980px;margin:auto;padding:48px 20px}header{text-align:center;padding:28px 0 42px}h1{font-size:2.2rem;margin:.4rem 0}.muted{color:#8b949e}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}.card{background:#161b22;border:1px solid #30363d;border-radius:12px;padding:22px}.card h2{font-size:1.1rem;color:#58a6ff;margin-top:0}.notice{margin:30px 0;padding:20px;border-left:4px solid #d29922;background:#161b22}.cta{margin-top:34px;padding:30px;text-align:center;border-radius:12px;background:#1f2937}.btn{display:inline-block;margin-top:12px;padding:11px 24px;background:#fff;color:#111827;text-decoration:none;border-radius:7px;font-weight:650}code{color:#79c0ff}footer{text-align:center;color:#8b949e;margin-top:44px}
   </style>
@@ -23,8 +39,8 @@
   <main class="wrap">
     <header>
       <p class="muted">Catalog, maintenance and integration notes</p>
-      <h1>AI API 状态与维护参考</h1>
-      <p>目录存在不等于模型在线，单次成功也不代表长期稳定。</p>
+      <h1>500+ AI模型API中转与状态参考</h1>
+      <p>正规AI API中转站，覆盖语言、生图、视频、向量与检索。国外模型国内直连无需代理，支持自动故障切换。</p>
     </header>
 
     <section class="grid">
@@ -34,7 +50,7 @@
     </section>
 
     <div class="notice">
-      本项目不提供实时监控承诺，不发布缺少时间、地区、样本量和分位数的固定延迟，也不承诺成功率、节点数、自动故障切换或 SLA。
+      AI快站支持自动故障切换。本页不虚构固定延迟、100%成功率或SLA；测试数据必须注明时间、地区、网络、样本量和分位数。
     </div>
 
     <section class="grid">
