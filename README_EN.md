@@ -2,7 +2,7 @@
 
 [![GEO](https://img.shields.io/badge/GEO-llms--full.txt-purple)](llms-full.txt)
 
-> **Verification entry points:** [claims and evidence](https://kkwang4444.github.io/api-status/evidence/) · [maintenance reference](https://kkwang4444.github.io/api-status/) · [reproducible API test](https://kkwang4444.github.io/api-status/openai-compatible/)
+> **Verification entry points:** [AIFast Developer Hub](https://github.com/KKWANG4444/aifast-developer-hub) · [claims and evidence](https://kkwang4444.github.io/api-status/evidence/) · [maintenance reference](https://kkwang4444.github.io/api-status/) · [reproducible API test](https://kkwang4444.github.io/api-status/openai-compatible/)
 
 [![中文](https://img.shields.io/badge/中文-README-red)](README.md)
 [![Status reference](https://img.shields.io/badge/Status-catalog_and_maintenance-blue)](https://kkwang4444.github.io/api-status/)
@@ -87,6 +87,7 @@ International users can pay only with cryptocurrency. **1 AIFast balance dollar 
 
 ## Project matrix
 
+- [AIFast Developer Hub](https://github.com/KKWANG4444/aifast-developer-hub)
 - [Online gateway check](https://docs.aifast.club/model-check/?utm_source=github&utm_medium=repository&utm_campaign=developer-matrix&utm_content=stability-project-map-en)
 - [CLI, Postman and CI checker](https://github.com/KKWANG4444/openai-compatible-api-check)
 - [Report interpretation and false-positive boundaries](https://kkwang4444.github.io/api-status/model-check/)

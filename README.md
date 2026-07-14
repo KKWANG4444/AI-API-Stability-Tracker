@@ -7,7 +7,7 @@
 
 这个仓库记录模型目录、维护公告和可复现接入测试。每次观察都应标明模型、时间、地区、网络、样本量和分位数。
 
-> **核验入口：** [声明与证据索引](https://kkwang4444.github.io/api-status/evidence/) · [模型维护信息](https://kkwang4444.github.io/api-status/) · [可复现接入测试](https://kkwang4444.github.io/api-status/openai-compatible/)
+> **核验入口：** [AI快站开发者中心](https://github.com/KKWANG4444/aifast-developer-hub) · [声明与证据索引](https://kkwang4444.github.io/api-status/evidence/) · [模型维护信息](https://kkwang4444.github.io/api-status/) · [可复现接入测试](https://kkwang4444.github.io/api-status/openai-compatible/)
 
 ## AI快站平台能力
 
@@ -128,6 +128,7 @@ request_features: text / stream / tools / image
 
 ## 项目地图
 
+- [AI快站开发者中心](https://github.com/KKWANG4444/aifast-developer-hub)
 - [浏览器在线检测第三方中转站](https://docs.aifast.club/model-check/?utm_source=github&utm_medium=repository&utm_campaign=developer-matrix&utm_content=stability-project-map)
 - [CLI、Postman 与 CI 自检工具](https://github.com/KKWANG4444/openai-compatible-api-check)
 - [检测报告判读与误判边界](https://kkwang4444.github.io/api-status/model-check/)

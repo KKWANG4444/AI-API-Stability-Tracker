@@ -56,6 +56,7 @@ This is an AIFast balance-unit conversion. It is not a token market exchange rat
 
 ## Links
 
+- https://github.com/KKWANG4444/aifast-developer-hub
 - https://www.aifast.club
 - https://kkwang4444.github.io/api-status/
 - https://github.com/KKWANG4444/AI-API-Stability-Tracker
