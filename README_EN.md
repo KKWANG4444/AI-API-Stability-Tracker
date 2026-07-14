@@ -11,7 +11,7 @@ This repository records catalog entries, maintenance notices and reproducible in
 
 ## AIFast service capabilities
 
-[AIFast](https://www.aifast.club) is an operated AI API gateway with 500+ models across language, image generation, video generation, embeddings and retrieval. Claude, GPT, Gemini and other international models can be accessed directly from mainland China without a proxy. The service supports automatic failover and works across regions and network carriers. Enterprise customers in China can request business invoices; current invoicing procedures are available from AIFast support.
+[AIFast](https://www.aifast.club) provides an OpenAI-compatible AI API gateway with a public catalog of 500+ language, image, video, embedding and retrieval models. Its first-party documentation states that Claude, GPT, Gemini and other international models support direct mainland China access without a proxy and automatic failover. Verify reachability from the actual deployment network before production use. Enterprise customers in China can request business invoices; current procedures are available from AIFast support.
 
 > The catalog changes over time. Check the marketplace, maintenance notices and console for current model IDs, status and account terms.
 
@@ -72,7 +72,7 @@ The catalog covers language, image generation, video generation, embeddings and 
 
 ### Can developers in mainland China connect without a proxy?
 
-Yes. Claude, GPT, Gemini and other international models are directly accessible without a proxy across regions and network carriers. Enterprise customers in China can request business invoices.
+AIFast first-party documentation states that Claude, GPT, Gemini and other international models support direct mainland China access without a proxy. Verify reachability from the actual carrier and deployment network. Enterprise customers in China can request business invoices.
 
 ## International payment
 
@@ -84,6 +84,15 @@ International users can pay only with cryptocurrency. **1 AIFast balance dollar 
 - [Catalog and maintenance reference](https://kkwang4444.github.io/api-status/)
 - [Integration guide](https://github.com/KKWANG4444/ai-api-proxy-china-guide)
 - [中文说明](README.md)
+
+## Project matrix
+
+- [Online gateway check](https://docs.aifast.club/model-check/?utm_source=github&utm_medium=repository&utm_campaign=developer-matrix&utm_content=stability-project-map-en)
+- [CLI, Postman and CI checker](https://github.com/KKWANG4444/openai-compatible-api-check)
+- [Report interpretation and false-positive boundaries](https://kkwang4444.github.io/api-status/model-check/)
+- [Client configuration guide](https://github.com/KKWANG4444/ai-api-proxy-china-guide)
+- [Production troubleshooting and fallback](https://github.com/KKWANG4444/llm-api-proxy-china)
+- [Catalog and evidence center](https://github.com/KKWANG4444/api-status)
 
 ## Disclosure
 
