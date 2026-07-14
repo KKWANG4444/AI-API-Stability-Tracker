@@ -82,6 +82,10 @@ request_features: text / stream / tools / image
 
 缺少时间、地区、样本量和分位数的数据，不应写成性能结论。
 
+### 保存一次模型兼容性基线
+
+[大模型API中转站检测](https://docs.aifast.club/model-check/?utm_source=github&utm_medium=repository&utm_campaign=model-check&utm_content=stability-readme-cn)会交叉检查响应模型、Token、随机动态题、SSE与工具调用。它适合保存低峰和高峰的两份报告，观察相同参数下是否持续漂移。总分是本轮接口兼容度，不是模型身份认证，也不能替代延迟、并发和错误率测试。
+
 ## 生产接入建议
 
 - 对 429 使用指数退避和随机抖动；

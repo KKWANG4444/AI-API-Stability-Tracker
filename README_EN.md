@@ -54,6 +54,8 @@ request features such as streaming, tools or images
 
 Without those fields, a latency or availability number should not be treated as a production result.
 
+[Run the public model check](https://docs.aifast.club/model-check/?utm_source=github&utm_medium=repository&utm_campaign=model-check&utm_content=stability-readme-en) at comparable low- and high-traffic periods to record model declarations, token metadata, dynamic probes, SSE and tool-call behavior. Its score describes compatibility for that run; it is not vendor identity certification or a reliability SLA.
+
 ## Questions developers ask
 
 ### How should a status observation be read?

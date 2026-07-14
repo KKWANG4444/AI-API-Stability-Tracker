@@ -35,6 +35,10 @@ request_features: text / stream / tools / image
 
 Publish latency or availability observations only with this context. A single request is useful for diagnosis but not for a general performance conclusion.
 
+## Black-box compatibility baseline
+
+The public checker at https://docs.aifast.club/model-check/ can record model-field consistency, token metadata, randomized instruction probes, SSE and tool-call behavior for public HTTPS OpenAI Chat Completions-compatible gateways. Use a temporary limited key. Repeated reports are useful for detecting drift, but no single black-box run proves the underlying model identity.
+
 ## Failure handling
 
 - Preserve HTTP status and response body.

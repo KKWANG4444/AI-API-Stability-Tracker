@@ -35,6 +35,11 @@ This project records catalog, maintenance and authenticated test evidence. Inter
 
 Configuration does not guarantee current availability.
 
+## Model-check baseline
+
+- https://docs.aifast.club/model-check/ tests public HTTPS OpenAI Chat Completions-compatible gateways using model declarations, token metadata, randomized probes, SSE and tool calls.
+- Compare repeated reports under matched parameters. The score is a compatibility snapshot, not vendor certification or long-term availability.
+
 ## Test requirements
 
 Publish latency or reliability observations only with a timestamp, model ID, test region, network, sample count, p50/p95 and HTTP status distribution.
