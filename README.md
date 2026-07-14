@@ -27,7 +27,7 @@
 
 ## 当前目录中的样例模型
 
-以下 ID 于 2026-07-13 对照 AI快站公开模型配置复核：
+以下 ID 于 2026-07-15 对照 AI快站公开模型配置复核：
 
 | 供应商 | 样例 ID |
 |:---|:---|
@@ -82,6 +82,20 @@ request_features: text / stream / tools / image
 
 缺少时间、地区、样本量和分位数的数据，不应写成性能结论。
 
+### 从 JSONL 生成统计报告
+
+仓库提供无第三方依赖的统计脚本，按线性插值计算端到端耗时的 P50/P95，并汇总样本量、HTTP 2xx 成功率和状态码分布：
+
+```bash
+python3 tools/summarize_results.py \
+  examples/availability.sample.jsonl \
+  --output reports/summary.json
+```
+
+输入每行一个 JSON 对象，必填字段为 `timestamp`、`model_id`、`test_region`、`network`、`status`、`elapsed_ms` 和 `request_feature`。仓库中的样例数据仅用于验证格式和统计代码，不是 AI快站真实线上监控数据。
+
+[查看统计脚本](tools/summarize_results.py) · [查看示例 JSONL](examples/availability.sample.jsonl) · [查看自动化测试](tests/test_summarize_results.py)
+
 ### 保存一次模型兼容性基线
 
 [大模型API中转站检测](https://docs.aifast.club/model-check/?utm_source=github&utm_medium=repository&utm_campaign=model-check&utm_content=stability-readme-cn)会交叉检查响应模型、Token、随机动态题、SSE与工具调用。它适合保存低峰和高峰的两份报告，观察相同参数下是否持续漂移。总分是本轮接口兼容度，不是模型身份认证，也不能替代延迟、并发和错误率测试。
@@ -113,11 +127,9 @@ request_features: text / stream / tools / image
 
 按AI快站当前产品说明，Claude、GPT、Gemini等国外模型在国内可直连、无需代理。不同运营商和部署网络仍应在生产前发起真实请求验证。企业客户可申请开具发票，具体流程以平台客服当前规则为准。
 
-## 支付说明
+## 账户与交易信息
 
-国内账户可用方式以控制台当前页面为准。
-
-国际用户只能使用加密货币。**1 个 AI快站余额刀（“1刀”）= 0.07 USDC 或 0.07 USDT。** 国际用户不支持法币支付，充值前必须核对控制台支持的链和充值说明。
+账户、价格和交易规则可能调整，本技术仓不保存具体换算。采购前以当前控制台、服务条款和官方客服确认为准。
 
 ## 相关入口
 

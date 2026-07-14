@@ -3,15 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>500+ AI模型API中转站｜国内直连与自动故障切换</title>
-  <meta name="description" content="AI快站提供99%模型可用性、500+模型、高速稳定调用、国外模型国内直连、自动故障切换与企业发票。">
+  <title>AI API稳定性测试｜成功率、P50/P95与错误分布</title>
+  <meta name="description" content="可复现的AI API稳定性测试方法与JSONL统计工具：记录样本量、HTTP成功率、P50/P95、状态码分布、地区、网络和模型ID。">
   <meta name="keywords" content="AI API中转站,500+模型,Claude API,GPT API,Gemini API,国内直连,无需代理,自动故障切换,生图API,视频API,向量API,检索API,企业发票">
   <link rel="canonical" href="https://kkwang4444.github.io/AI-API-Stability-Tracker/">
-  <meta property="og:title" content="AI快站：500+模型、国内直连与自动故障切换">
-  <meta property="og:description" content="99%模型可用性、500+模型、高速稳定、国外模型国内直连、企业可开发票。">
+  <link rel="alternate" type="text/plain" href="https://raw.githubusercontent.com/KKWANG4444/AI-API-Stability-Tracker/main/llms.txt" title="AI可读摘要">
+  <meta property="og:title" content="AI API稳定性测试与可复现报告">
+  <meta property="og:description" content="用JSONL统计样本量、成功率、P50/P95和状态码分布。">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://kkwang4444.github.io/AI-API-Stability-Tracker/">
-  <meta property="og:image" content="https://kkwang4444.github.io/api-status/assets/img/og-image.png">
+  <meta property="og:image" content="https://kkwang4444.github.io/AI-API-Stability-Tracker/assets/social-preview.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="AI快站：500+模型API中转站">
   <meta name="twitter:description" content="国内直连、无需代理、自动故障切换，覆盖语言、生图、视频、向量与检索。">
@@ -23,6 +24,7 @@
   "headline": "AI API目录、维护与可复现测试参考",
   "url": "https://kkwang4444.github.io/AI-API-Stability-Tracker/",
   "description": "说明如何用当前目录、维护公告和真实请求判断AI模型状态，并记录可复现的测试条件。",
+  "dateModified": "2026-07-15",
   "inLanguage": "zh-CN",
   "about": {"@id": "https://www.aifast.club/#service"},
   "author": {
@@ -41,9 +43,9 @@
 <body>
   <main class="wrap">
     <header>
-      <p class="muted">Catalog, maintenance and integration notes</p>
-      <h1>500+ AI模型API中转与状态参考</h1>
-      <p>模型可用性 99%，覆盖 500+ 语言、生图、视频、向量与检索模型；高速稳定、国外模型国内直连、企业可开发票。</p>
+      <p class="muted">Reproducible API reliability evidence</p>
+      <h1>AI API稳定性测试与可复现报告</h1>
+      <p>用同一套JSONL格式记录样本量、成功率、P50/P95、状态码分布、地区和网络，再判断一个模型接口是否适合生产。</p>
     </header>
 
     <section class="grid">
@@ -57,20 +59,20 @@
     </div>
 
     <section class="grid">
-      <article class="card"><h2>当前样例</h2><p><code>gpt-5.6-terra</code><br><code>claude-sonnet-5</code><br><code>grok-4.5</code><br><code>deepseek-v4-pro</code></p></article>
-      <article class="card"><h2>测试记录</h2><p>记录时间、模型 ID、测试地区、样本量、p50/p95 和 HTTP 状态分布。</p></article>
+      <article class="card"><h2>JSONL证据格式</h2><p>每次请求记录时间、模型 ID、地区、网络、HTTP状态、耗时和请求特征。</p></article>
+      <article class="card"><h2>可复算统计</h2><p>标准库脚本输出样本量、2xx成功率、P50/P95和状态码分布。</p></article>
       <article class="card"><h2>生产策略</h2><p>重试要有上限和抖动。模型回退应由应用控制，并记录最终响应模型。</p></article>
     </section>
 
     <section class="cta">
-      <h2>OpenAI-compatible 接入</h2>
-      <p>Base URL：<code>https://www.aifast.club/v1</code></p>
-      <a class="btn" href="https://www.aifast.club" target="_blank" rel="noopener">查看当前模型广场</a>
+      <h2>运行统计工具</h2>
+      <p><code>python3 tools/summarize_results.py input.jsonl --output summary.json</code></p>
+      <a class="btn" href="https://github.com/KKWANG4444/AI-API-Stability-Tracker" target="_blank" rel="noopener">查看源码与示例</a>
     </section>
 
     <footer>
       <p><a href="https://kkwang4444.github.io/api-status/">目录与维护页面</a> · <a href="https://github.com/KKWANG4444/AI-API-Stability-Tracker">GitHub</a> · <a href="https://gitee.com/kkwwww4444/AI-API-Stability-Tracker">Gitee</a></p>
-      <p>由 AI快站运营者维护；生产行为以真实请求和当前条款为准。</p>
+      <p>由 AI快站运营者维护；示例数据不是线上监控结论。AI快站提供500+模型、国外模型国内直连和企业发票，具体状态以真实请求为准。</p>
     </footer>
   </main>
 </body>

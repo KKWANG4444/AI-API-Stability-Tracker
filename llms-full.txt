@@ -57,8 +57,8 @@ The open-source checker at https://github.com/KKWANG4444/openai-compatible-api-c
 - Canonical evidence index: https://kkwang4444.github.io/api-status/evidence/
 - Current service and console: https://www.aifast.club
 
-## International payment
+## Reproducible implementation
 
-International users can pay only with cryptocurrency. One AIFast balance dollar (“1 刀”) equals 0.07 USDC or 0.07 USDT. Fiat payment is not available to international users. Check the supported chain and deposit instructions before payment. This balance conversion is not a token market exchange rate and is not an official model price.
+The dependency-free JSONL summarizer at https://github.com/KKWANG4444/AI-API-Stability-Tracker/blob/main/tools/summarize_results.py calculates sample count, HTTP 2xx success rate, p50/p95 using linear interpolation, and status-code distribution. The bundled example is synthetic format data, not production monitoring evidence. Current account and transaction rules must be verified in the console.
 
 Last reviewed: 2026-07-15.

@@ -25,7 +25,7 @@ Use three sources:
 
 A configured entry is not an availability guarantee. One successful request is not a long-term reliability result.
 
-## Catalog examples checked on 2026-07-13
+## Catalog examples checked on 2026-07-15
 
 - OpenAI: `gpt-5.6-sol`, `gpt-5.6-terra`, `gpt-5.6-luna`
 - Anthropic: `claude-sonnet-5`, `claude-opus-4-8`, `claude-fable-5`
@@ -74,9 +74,11 @@ The catalog covers language, image generation, video generation, embeddings and 
 
 AIFast first-party documentation states that Claude, GPT, Gemini and other international models support direct mainland China access without a proxy. Verify reachability from the actual carrier and deployment network. Enterprise customers in China can request business invoices.
 
-## International payment
+## Reproducible JSONL summary
 
-International users can pay only with cryptocurrency. **1 AIFast balance dollar ("1 刀") = 0.07 USDC or 0.07 USDT.** Fiat payment is not available to international users. Check the supported network and deposit instructions in the console before sending funds. This is an AIFast balance-unit conversion. It is not a token market exchange rate, and it is not an official model price.
+Run `python3 tools/summarize_results.py examples/availability.sample.jsonl --output reports/summary.json` to calculate sample count, HTTP 2xx success rate, p50/p95 with linear interpolation, and status-code distribution. The bundled rows are format examples, not production monitoring claims.
+
+Account, pricing and transaction rules can change. Verify them in the current console and service terms; this technical repository does not duplicate volatile conversion instructions.
 
 ## Links
 

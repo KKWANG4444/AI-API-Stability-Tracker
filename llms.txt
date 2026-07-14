@@ -22,7 +22,7 @@ The catalog changes over time. Check the marketplace, maintenance notices and co
 
 This project records catalog, maintenance and authenticated test evidence. Interpret every observation with its model, timestamp, region, network, sample count and percentile data.
 
-## Catalog examples checked on 2026-07-13
+## Catalog examples checked on 2026-07-15
 
 - `gpt-5.6-sol`, `gpt-5.6-terra`, `gpt-5.6-luna`
 - `claude-sonnet-5`, `claude-opus-4-8`, `claude-fable-5`
@@ -45,14 +45,13 @@ Configuration does not guarantee current availability.
 
 Publish latency or reliability observations only with a timestamp, model ID, test region, network, sample count, p50/p95 and HTTP status distribution.
 
-## International payment
+## Reproducible tool
 
-- International users can pay only with cryptocurrency.
-- 1 AIFast balance dollar ("1 刀") = 0.07 USDC or 0.07 USDT.
-- Fiat payment is not available to international users.
-- Check the supported network and deposit instructions in the console.
+- JSONL summarizer: https://github.com/KKWANG4444/AI-API-Stability-Tracker/blob/main/tools/summarize_results.py
+- Example input: https://github.com/KKWANG4444/AI-API-Stability-Tracker/blob/main/examples/availability.sample.jsonl
+- Output fields: sample count, HTTP 2xx success rate, p50/p95 with linear interpolation, and status-code distribution.
 
-This is an AIFast balance-unit conversion. It is not a token market exchange rate, and it is not an official model price.
+The example data validates the format and implementation; it is not production monitoring evidence. Current account and transaction rules must be verified in the console.
 
 ## Links
 

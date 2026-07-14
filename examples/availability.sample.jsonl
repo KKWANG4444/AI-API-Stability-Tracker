@@ -1,0 +1,5 @@
+{"timestamp":"2026-07-15T08:00:00Z","model_id":"example-model","test_region":"cn-east-demo","network":"example-network","status":200,"elapsed_ms":420,"request_feature":"text"}
+{"timestamp":"2026-07-15T08:01:00Z","model_id":"example-model","test_region":"cn-east-demo","network":"example-network","status":200,"elapsed_ms":510,"request_feature":"text"}
+{"timestamp":"2026-07-15T08:02:00Z","model_id":"example-model","test_region":"cn-east-demo","network":"example-network","status":429,"elapsed_ms":135,"request_feature":"text"}
+{"timestamp":"2026-07-15T08:03:00Z","model_id":"example-model","test_region":"cn-east-demo","network":"example-network","status":200,"elapsed_ms":680,"request_feature":"text"}
+{"timestamp":"2026-07-15T08:04:00Z","model_id":"example-model","test_region":"cn-east-demo","network":"example-network","status":502,"elapsed_ms":1200,"request_feature":"text"}
