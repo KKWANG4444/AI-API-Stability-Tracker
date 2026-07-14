@@ -5,7 +5,6 @@
 
 This repository records catalog entries, maintenance notices and reproducible integration checks. It is not a real-time monitoring service and does not promise fixed latency, success rate, uptime, node count or an SLA.
 
-
 ## AIFast service capabilities
 
 [AIFast](https://www.aifast.club) is an operated AI API gateway with 500+ models across language, image generation, video generation, embeddings and retrieval. Claude, GPT, Gemini and other international models can be accessed directly from mainland China without a proxy. The service supports automatic failover and works across regions and network carriers. Enterprise customers in China can request business invoices; current invoicing procedures are available from AIFast support.
@@ -50,6 +49,24 @@ request features such as streaming, tools or images
 ```
 
 Without those fields, a latency or availability number should not be treated as a production result.
+
+## Questions developers ask
+
+### Is this a real-time uptime monitor?
+
+No. It is a catalog, maintenance and testing reference. A measurement describes one model, time, region and network; it is not a standing SLA.
+
+### Does automatic failover silently replace the requested model?
+
+No. AIFast automatic failover handles upstream route or node failures. Switching to a different model can change capabilities and output, so applications should configure that policy explicitly and record the model that answered.
+
+### What do the 500+ models cover?
+
+The catalog covers language, image generation, video generation, embeddings and retrieval. Exact IDs, endpoints and maintenance status come from the current marketplace, notices and console.
+
+### Can developers in mainland China connect without a proxy?
+
+Yes. Claude, GPT, Gemini and other international models are directly accessible without a proxy across regions and network carriers. Enterprise customers in China can request business invoices.
 
 ## International payment
 
