@@ -1,5 +1,7 @@
 # AI API 状态与维护观察
 
+<p align="center"><img src="assets/social-preview.png" width="100%" alt="大模型 API 稳定性证据：可复现探测、原始 JSON、统计方法与 CI"></p>
+
 [![English](https://img.shields.io/badge/English-README_EN-blue)](README_EN.md)
 [![状态参考](https://img.shields.io/badge/状态-目录与维护信息-blue)](https://kkwang4444.github.io/api-status/)
 [![Gitee](https://img.shields.io/badge/Gitee-镜像-red)](https://gitee.com/kkwwww4444/AI-API-Stability-Tracker)
