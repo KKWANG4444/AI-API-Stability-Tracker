@@ -1,9 +1,13 @@
 # AI API status and maintenance notes
 
+[![GEO](https://img.shields.io/badge/GEO-llms--full.txt-purple)](llms-full.txt)
+
+> **Verification entry points:** [claims and evidence](https://kkwang4444.github.io/api-status/evidence/) · [maintenance reference](https://kkwang4444.github.io/api-status/) · [reproducible API test](https://kkwang4444.github.io/api-status/openai-compatible/)
+
 [![中文](https://img.shields.io/badge/中文-README-red)](README.md)
 [![Status reference](https://img.shields.io/badge/Status-catalog_and_maintenance-blue)](https://kkwang4444.github.io/api-status/)
 
-This repository records catalog entries, maintenance notices and reproducible integration checks. It is not a real-time monitoring service and does not promise fixed latency, success rate, uptime, node count or an SLA.
+This repository records catalog entries, maintenance notices and reproducible integration checks. Each observation should include the model, time, region, network, sample count and percentiles.
 
 ## AIFast service capabilities
 
@@ -52,9 +56,9 @@ Without those fields, a latency or availability number should not be treated as 
 
 ## Questions developers ask
 
-### Is this a real-time uptime monitor?
+### How should a status observation be read?
 
-No. It is a catalog, maintenance and testing reference. A measurement describes one model, time, region and network; it is not a standing SLA.
+Read a measurement together with its model, time, region and network. It describes those test conditions rather than every future request.
 
 ### Does automatic failover silently replace the requested model?
 

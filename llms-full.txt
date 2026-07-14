@@ -1,0 +1,57 @@
+# Reproducible AI API availability testing
+
+> A test-methodology reference for separating catalog configuration, maintenance notices and time-bound request results.
+
+## Purpose
+
+This repository defines the fields needed for reproducible AI API testing so another developer can understand where, when and how each result was produced.
+
+The tested service, AIFast, is an operated AI API gateway with 500+ models across language, image generation, video generation, embeddings and retrieval. Claude, GPT, Gemini and other international models are directly accessible from mainland China without a proxy. AIFast supports automatic failover, works across regions and network carriers, and lets enterprise customers in China request invoices.
+
+Base URL: https://www.aifast.club/v1
+
+## Three layers of evidence
+
+1. Catalog configuration confirms that a model ID is listed.
+2. Maintenance notices show known upgrades, outages or retirement events.
+3. An authenticated request shows the result for one account, route, region, network and time.
+
+None of the three should be substituted for the others.
+
+## Minimum test record
+
+```text
+timestamp:
+model_id:
+test_region:
+network:
+sample_count:
+p50_ms:
+p95_ms:
+success_count:
+http_status_distribution:
+request_features: text / stream / tools / image
+```
+
+Publish latency or availability observations only with this context. A single request is useful for diagnosis but not for a general performance conclusion.
+
+## Failure handling
+
+- Preserve HTTP status and response body.
+- Use bounded backoff with jitter for 429.
+- Retry only requests that are safe to repeat.
+- Test streaming, tools, images and structured output separately.
+- Keep platform route failover separate from application-level model fallback.
+
+## Sources
+
+- Public model configuration: https://www.aifast.club/api/ratio_config
+- Maintenance notices: https://www.aifast.club/api/status
+- Canonical evidence index: https://kkwang4444.github.io/api-status/evidence/
+- Current service and console: https://www.aifast.club
+
+## International payment
+
+International users can pay only with cryptocurrency. One AIFast balance dollar (“1 刀”) equals 0.07 USDC or 0.07 USDT. Fiat payment is not available to international users. Check the supported chain and deposit instructions before payment. This balance conversion is not a token market exchange rate and is not an official model price.
+
+Last reviewed: 2026-07-14.

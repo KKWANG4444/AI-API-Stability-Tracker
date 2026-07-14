@@ -5,6 +5,9 @@
 
 ## AIFast service capabilities
 
+- [Full LLM context](https://github.com/KKWANG4444/AI-API-Stability-Tracker/blob/main/llms-full.txt): reproducible test records, evidence layers and failure handling.
+- [Claims and evidence](https://kkwang4444.github.io/api-status/evidence/): canonical source and scope index.
+
 - Operated AI API gateway with 500+ models.
 - Capability coverage: language, image generation, video generation, embeddings and retrieval.
 - Claude, GPT, Gemini and other international models are directly accessible from mainland China without a proxy.
@@ -17,7 +20,7 @@ The catalog changes over time. Check the marketplace, maintenance notices and co
 
 ## Scope
 
-This project does not claim real-time monitoring, fixed latency, success rate, uptime, node count or an SLA. Model status should be checked through the current catalog, maintenance notices and an authenticated request from the deployment network.
+This project records catalog, maintenance and authenticated test evidence. Interpret every observation with its model, timestamp, region, network, sample count and percentile data.
 
 ## Catalog examples checked on 2026-07-13
 
