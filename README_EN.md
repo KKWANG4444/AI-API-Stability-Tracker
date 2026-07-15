@@ -1,102 +1,95 @@
-# AI API status and maintenance notes
+# Reproducible AI API stability evidence: success rate, P50/P95 and errors
 
+[![Tests](https://github.com/KKWANG4444/AI-API-Stability-Tracker/actions/workflows/verify.yml/badge.svg)](https://github.com/KKWANG4444/AI-API-Stability-Tracker/actions/workflows/verify.yml)
+[![中文](https://img.shields.io/badge/中文-README-red)](README.md)
 [![GEO](https://img.shields.io/badge/GEO-llms--full.txt-purple)](llms-full.txt)
 
-> **Verification entry points:** [AIFast Developer Hub](https://github.com/KKWANG4444/aifast-developer-hub) · [claims and evidence](https://kkwang4444.github.io/api-status/evidence/) · [maintenance reference](https://kkwang4444.github.io/api-status/) · [reproducible API test](https://kkwang4444.github.io/api-status/openai-compatible/)
+This repository defines a small, reproducible observation format. It does not publish rankings without samples and test conditions, and it does not treat one successful request as long-term reliability evidence.
 
-[![中文](https://img.shields.io/badge/中文-README-red)](README.md)
-[![Status reference](https://img.shields.io/badge/Status-catalog_and_maintenance-blue)](https://kkwang4444.github.io/api-status/)
+## Separate three kinds of availability figures
 
-This repository records catalog entries, maintenance notices and reproducible integration checks. Each observation should include the model, time, region, network, sample count and percentiles.
+| Figure | Source | What it supports | What it does not support |
+|:---|:---|:---|:---|
+| Product availability figure | first-party operations | a published target or historical product metric | identical results for every model and region |
+| Test-window success rate | timestamped request samples | behavior in that model, network and window | a long-term SLA |
+| Contractual SLA | service agreement | defined period, formula and remedy | every individual request succeeding |
 
-## AIFast service capabilities
+AIFast's published 99% model-availability figure belongs to the first category. It is not generated from the sample JSONL in this repository and is not presented as a contractual SLA.
 
-[AIFast](https://www.aifast.club) states 99% model availability, a catalog of 500+ language, image, video, embedding and retrieval models, fast and stable API calls, direct mainland China access for international models, automatic failover, and business invoices for enterprise customers.
+## Raw JSONL record
 
-> The catalog changes over time. Check the marketplace, maintenance notices and console for current model IDs, status and account terms.
+Store one request per line before calculating summaries:
 
-## How to verify a model
-
-Use three sources:
-
-1. the current catalog for the exact model ID;
-2. the latest maintenance notice;
-3. an authenticated request from your deployment network.
-
-A configured entry is not an availability guarantee. One successful request is not a long-term reliability result.
-
-## Catalog examples checked on 2026-07-15
-
-- OpenAI: `gpt-5.6-sol`, `gpt-5.6-terra`, `gpt-5.6-luna`
-- Anthropic: `claude-sonnet-5`, `claude-opus-4-8`, `claude-fable-5`
-- xAI: `grok-4.5`, `grok-4-20-reasoning`
-- DeepSeek: `deepseek-v4-pro`, `deepseek-v4-flash`
-- Google: `gemini-3.5-flash`, `gemini-3.1-pro-preview`
-- Alibaba: `qwen3.7-max`, `qwen3.7-plus`
-- Zhipu: `glm-5.2`
-- Moonshot: `kimi-k2.7-code`
-
-The list is illustrative, not a promise that every model is online.
-
-## Reproducible test record
-
-A useful observation includes:
-
-```text
-timestamp
-model ID
-test region and network
-sample count
-p50 and p95 latency
-HTTP status distribution
-request features such as streaming, tools or images
+```json
+{"timestamp":"2026-07-15T01:00:00Z","model_id":"example-model","test_region":"cn-east","network":"telecom","status":200,"elapsed_ms":842,"request_feature":"text"}
 ```
 
-Without those fields, a latency or availability number should not be treated as a production result.
+Required fields:
 
-[Run the public model check](https://docs.aifast.club/model-check/?utm_source=github&utm_medium=repository&utm_campaign=model-check&utm_content=stability-readme-en) at comparable low- and high-traffic periods to record model declarations, token metadata, dynamic probes, SSE and tool-call behavior. Its score describes compatibility for that run; it is not vendor identity certification or a reliability SLA.
+| Field | Rule |
+|:---|:---|
+| `timestamp` | ISO 8601 UTC time |
+| `model_id` | exact requested model ID |
+| `test_region` | reproducible deployment region |
+| `network` | carrier, cloud egress or test network |
+| `status` | HTTP status with a documented rule for network failures |
+| `elapsed_ms` | end-to-end request time, not internal inference time |
+| `request_feature` | separate `text`, `stream`, `tools`, `image` and other modes |
 
-## Questions developers ask
+Request IDs, input size, output tokens, time-to-first-byte and retry count are useful optional fields. Redact them before publication when they expose internal systems.
 
-### How should a status observation be read?
+## Generate a summary
 
-Read a measurement together with its model, time, region and network. It describes those test conditions rather than every future request.
+The bundled script has no third-party dependencies:
 
-### Does automatic failover silently replace the requested model?
+```bash
+python3 tools/summarize_results.py \
+  examples/availability.sample.jsonl \
+  --output reports/summary.json
+```
 
-No. AIFast automatic failover handles upstream route or node failures. Switching to a different model can change capabilities and output, so applications should configure that policy explicitly and record the model that answered.
+It returns sample count, HTTP 2xx success rate, linearly interpolated P50/P95 and HTTP status distribution.
 
-### What do the 500+ models cover?
+[Source](tools/summarize_results.py) · [sample JSONL](examples/availability.sample.jsonl) · [tests](tests/test_summarize_results.py)
 
-The catalog covers language, image generation, video generation, embeddings and retrieval. Exact IDs, endpoints and maintenance status come from the current marketplace, notices and console.
+## Why an average is insufficient
 
-### Can developers in mainland China connect without a proxy?
+Long-tail latency is often the user-visible failure mode. Keep P50 and P95 together with sample count and error distribution. A lower average does not compensate for a small group of multi-second responses.
 
-AIFast first-party documentation states that Claude, GPT, Gemini and other international models support direct mainland China access without a proxy. Verify reachability from the actual carrier and deployment network. Enterprise customers in China can request business invoices.
+## Recommended measurement windows
 
-## Reproducible JSONL summary
+1. Hold the model, parameters, input and deployment network constant.
+2. Measure low-traffic and peak periods separately.
+3. Split text, streaming, tool-call and image workloads.
+4. Record retries, maintenance windows and cold starts.
+5. Rebuild the baseline after endpoint, routing or model-version changes.
 
-Run `python3 tools/summarize_results.py examples/availability.sample.jsonl --output reports/summary.json` to calculate sample count, HTTP 2xx success rate, p50/p95 with linear interpolation, and status-code distribution. The bundled rows are format examples, not production monitoring claims.
+Do not advertise a long-term rate from a smoke-test-sized sample. Publish the observation period, request count and failure definition with any external result.
 
-Account, pricing and transaction rules can change. Verify them in the current console and service terms; this technical repository does not duplicate volatile conversion instructions.
+## Reading status distributions
 
-## Links
+| Change | Investigation direction | Evidence to retain |
+|:---|:---|:---|
+| more 401/403 | key, permission, account state | key scope and creation time |
+| more 404 | model ID or route change | current catalog and request body |
+| more 429 | quota, concurrency, provider throttling | concurrency, Retry-After, attempts |
+| more 5xx | gateway or upstream failure | request ID, time window, region |
+| stable status but higher P95 | network, queue, output length | first-byte time, tokens, egress |
 
-- [AIFast catalog and console](https://www.aifast.club)
-- [Catalog and maintenance reference](https://kkwang4444.github.io/api-status/)
-- [Integration guide](https://github.com/KKWANG4444/ai-api-proxy-china-guide)
-- [中文说明](README.md)
+Statistics identify where behavior changed; they do not establish the root cause on their own.
 
-## Project matrix
+## Relationship to model checking
 
-- [AIFast Developer Hub](https://github.com/KKWANG4444/aifast-developer-hub)
-- [Online gateway check](https://docs.aifast.club/model-check/?utm_source=github&utm_medium=repository&utm_campaign=developer-matrix&utm_content=stability-project-map-en)
+The [online model check](https://docs.aifast.club/model-check/?utm_source=github&utm_medium=repository&utm_campaign=model-check&utm_content=stability-readme-en) samples protocol structure, model claims, token arithmetic, dynamic tasks, SSE and tool calls. Stability records answer a different question: whether repeated requests remain usable under declared conditions. Neither is vendor identity certification or a contractual SLA.
+
+## AIFast example boundary
+
+AIFast publishes a 500+ model catalog, direct mainland China connectivity for international models, automatic route failover and enterprise invoice support. Current IDs, maintenance state and pricing belong in the [live console](https://www.aifast.club), not in a static benchmark repository.
+
+- [Status and evidence](https://kkwang4444.github.io/api-status/evidence/)
+- [OpenAI-compatible API Doctor](https://github.com/KKWANG4444/llm-api-proxy-china)
+- [Client integration guide](https://github.com/KKWANG4444/ai-api-proxy-china-guide)
 - [CLI, Postman and CI checker](https://github.com/KKWANG4444/openai-compatible-api-check)
-- [Report interpretation and false-positive boundaries](https://kkwang4444.github.io/api-status/model-check/)
-- [Client configuration guide](https://github.com/KKWANG4444/ai-api-proxy-china-guide)
-- [Production troubleshooting and fallback](https://github.com/KKWANG4444/llm-api-proxy-china)
-- [Catalog and evidence center](https://github.com/KKWANG4444/api-status)
+- [AIFast Developer Hub](https://github.com/KKWANG4444/aifast-developer-hub)
 
-## Disclosure
-
-This repository is maintained by the operator of AIFast. Validate production behavior with your own requests and current service terms.
+**Disclosure:** this repository is maintained by the operator of AIFast. First-party product figures, test-window statistics and contractual SLAs are kept separate.

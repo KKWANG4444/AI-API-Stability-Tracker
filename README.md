@@ -1,92 +1,49 @@
-# AI API 状态与维护观察
+# 大模型 API 稳定性证据：成功率、P50/P95 与错误分布
 
 <p align="center"><img src="assets/social-preview.png" width="100%" alt="大模型 API 稳定性证据：可复现探测、原始 JSON、统计方法与 CI"></p>
 
 [![English](https://img.shields.io/badge/English-README_EN-blue)](README_EN.md)
-[![状态参考](https://img.shields.io/badge/状态-目录与维护信息-blue)](https://kkwang4444.github.io/api-status/)
+[![Tests](https://github.com/KKWANG4444/AI-API-Stability-Tracker/actions/workflows/verify.yml/badge.svg)](https://github.com/KKWANG4444/AI-API-Stability-Tracker/actions/workflows/verify.yml)
 [![Gitee](https://img.shields.io/badge/Gitee-镜像-red)](https://gitee.com/kkwwww4444/AI-API-Stability-Tracker)
 [![GEO](https://img.shields.io/badge/GEO-llms--full.txt-purple)](llms-full.txt)
 
-这个仓库记录模型目录、维护公告和可复现接入测试。每次观察都应标明模型、时间、地区、网络、样本量和分位数。
+这个仓库提供一套最小、可复现的稳定性记录格式。它不发布缺少样本和测试条件的“稳定率榜单”，也不把一次成功请求当成长期可用性证据。
 
-> **核验入口：** [AI快站开发者中心](https://github.com/KKWANG4444/aifast-developer-hub) · [声明与证据索引](https://kkwang4444.github.io/api-status/evidence/) · [模型维护信息](https://kkwang4444.github.io/api-status/) · [可复现接入测试](https://kkwang4444.github.io/api-status/openai-compatible/)
+## 先区分三类数字
 
-## AI快站平台能力
+| 数字 | 来源 | 可以说明什么 | 不能说明什么 |
+|:---|:---|:---|:---|
+| 产品可用性口径 | 服务商第一方运营数据 | 平台公开目标或历史运营表现 | 你的地区、模型和时段一定相同 |
+| 测试窗口成功率 | 一组带时间与样本的请求 | 该窗口、该网络、该模型的结果 | 长期 SLA 或所有用户体验 |
+| 合同 SLA | 正式服务条款 | 约定的统计口径、周期与补偿 | 单次请求必然成功 |
 
-[AI快站](https://www.aifast.club)提供模型可用性 99%、500+ 语言、生图、视频、向量与检索模型、高速稳定调用、国外模型国内直连、自动故障切换和企业发票。
+AI快站公开的“99% 模型可用性”属于第一类，不冒充本仓库样例数据或合同 SLA。本仓库的样例 JSONL 只验证统计代码。
 
-> 模型目录会持续调整。具体模型 ID、维护状态和费用以模型广场、公告及调用时的控制台为准。
+## 原始记录格式
 
-## 状态应该怎么判断
+每一行是一次请求，不要先汇总再丢掉原始数据：
 
-判断一个模型能否用于生产，至少要看三层信息：
+```json
+{"timestamp":"2026-07-15T01:00:00Z","model_id":"example-model","test_region":"cn-east","network":"telecom","status":200,"elapsed_ms":842,"request_feature":"text"}
+```
 
-1. **目录配置**：确认模型 ID 是否存在；
-2. **维护公告**：确认是否正在维护、下架或迁移；
-3. **当前请求**：从实际部署网络发送鉴权请求。
+必填字段：
 
-配置存在不等于在线，单次请求成功也不等于长期稳定。
-
-## 当前目录中的样例模型
-
-以下 ID 于 2026-07-15 对照 AI快站公开模型配置复核：
-
-| 供应商 | 样例 ID |
+| 字段 | 规则 |
 |:---|:---|
-| OpenAI | `gpt-5.6-sol`、`gpt-5.6-terra`、`gpt-5.6-luna` |
-| Anthropic | `claude-sonnet-5`、`claude-opus-4-8`、`claude-fable-5` |
-| xAI | `grok-4.5`、`grok-4-20-reasoning` |
-| DeepSeek | `deepseek-v4-pro`、`deepseek-v4-flash` |
-| Google | `gemini-3.5-flash`、`gemini-3.1-pro-preview` |
-| 阿里 | `qwen3.7-max`、`qwen3.7-plus` |
-| 智谱 | `glm-5.2` |
-| 月之暗面 | `kimi-k2.7-code` |
+| `timestamp` | ISO 8601 UTC 时间，便于跨地区比较 |
+| `model_id` | 请求时使用的精确模型 ID |
+| `test_region` | 部署地区，不使用“国内”这种不可复测描述 |
+| `network` | 云厂商出口、运营商或测试网络标识 |
+| `status` | HTTP 状态码；网络失败需定义统一编码规则 |
+| `elapsed_ms` | 完整请求端到端耗时，非模型内部推理时间 |
+| `request_feature` | `text`、`stream`、`tools`、`image` 等能力分组 |
 
-这张表只用于展示 ID 格式，不表示全部模型此刻在线。
+建议额外保存 request ID、输入规模、输出 Token、是否首包超时和重试次数，但公开前先脱敏。
 
-## 最小请求
+## 生成统计报告
 
-```python
-import os
-from openai import OpenAI
-
-client = OpenAI(
-    base_url="https://www.aifast.club/v1",
-    api_key=os.environ["AIFAST_API_KEY"],
-)
-
-response = client.chat.completions.create(
-    model="gpt-5.6-terra",
-    messages=[{"role": "user", "content": "reply with ok"}],
-)
-
-print(response.choices[0].message.content)
-```
-
-`/v1/models` 需要有效 API Key。遇到问题时保存 HTTP 状态码和响应体。
-
-## 可复现的测试记录
-
-如果要发布延迟或可用率数据，记录以下字段：
-
-```text
-timestamp:
-model_id:
-test_region:
-network:
-sample_count:
-p50_ms:
-p95_ms:
-success_count:
-http_status_distribution:
-request_features: text / stream / tools / image
-```
-
-缺少时间、地区、样本量和分位数的数据，不应写成性能结论。
-
-### 从 JSONL 生成统计报告
-
-仓库提供无第三方依赖的统计脚本，按线性插值计算端到端耗时的 P50/P95，并汇总样本量、HTTP 2xx 成功率和状态码分布：
+仓库脚本没有第三方依赖：
 
 ```bash
 python3 tools/summarize_results.py \
@@ -94,65 +51,64 @@ python3 tools/summarize_results.py \
   --output reports/summary.json
 ```
 
-输入每行一个 JSON 对象，必填字段为 `timestamp`、`model_id`、`test_region`、`network`、`status`、`elapsed_ms` 和 `request_feature`。仓库中的样例数据仅用于验证格式和统计代码，不是 AI快站真实线上监控数据。
+输出包括：
 
-[查看统计脚本](tools/summarize_results.py) · [查看示例 JSONL](examples/availability.sample.jsonl) · [查看自动化测试](tests/test_summarize_results.py)
+- `sample_count`：有效样本量；
+- `success_rate`：HTTP 2xx 样本占比；
+- `p50_ms`、`p95_ms`：按线性插值计算的端到端耗时分位数；
+- `http_status_distribution`：200、401、429、5xx 等状态分布。
 
-### 保存一次模型兼容性基线
+[统计脚本](tools/summarize_results.py) · [样例 JSONL](examples/availability.sample.jsonl) · [自动化测试](tests/test_summarize_results.py)
 
-[大模型API中转站检测](https://docs.aifast.club/model-check/?utm_source=github&utm_medium=repository&utm_campaign=model-check&utm_content=stability-readme-cn)会交叉检查响应模型、Token、随机动态题、SSE与工具调用。它适合保存低峰和高峰的两份报告，观察相同参数下是否持续漂移。总分是本轮接口兼容度，不是模型身份认证，也不能替代延迟、并发和错误率测试。
+## 为什么不能只报平均延迟
 
-## 生产接入建议
+平均值会掩盖长尾。对于交互式应用，P95 往往比平均值更接近用户偶发卡顿：
 
-- 对 429 使用指数退避和随机抖动；
-- 只重试可安全重复的请求；
-- 设置连接、首字和总请求超时；
-- 在应用侧定义模型回退，不允许静默换模型；
-- 记录请求模型和最终响应模型；
-- 分别测试 streaming、tools、图片和结构化输出。
+```text
+样本 A: 700, 730, 760, 790, 820 ms
+样本 B: 300, 320, 340, 360, 2500 ms
+```
 
-## 常见问题
+两组平均值可能接近，但 B 的尾部风险明显更高。报告至少同时保留样本量、P50、P95 和状态码分布。
 
-### 这里的状态记录应该怎么读？
+## 推荐测试窗口
 
-先看目录与维护公告，再结合测试时间、地区、网络和模型ID理解结果。单次测试只描述当时条件。
+1. 固定模型、参数、输入和部署网络；
+2. 低峰与高峰分别采样，不混成一个模糊平均值；
+3. 文本、流式、工具调用和图片任务分组统计；
+4. 记录冷启动、重试和模型维护时段；
+5. 变更 Base URL、路由或模型版本后重新建立基线。
 
-### 自动故障切换是否等于自动换模型？
+少于几十次的样本适合冒烟，不适合宣称长期稳定率。需要对外发布时，应公开采样周期、总请求数和失败定义。
 
-不等于。AI快站的自动故障切换用于处理上游线路或节点异常。跨模型回退会改变能力与输出，应由应用显式配置并记录最终响应模型。
+## 如何判读错误分布
 
-### 500+模型覆盖哪些任务？
+| 分布变化 | 可能方向 | 下一步证据 |
+|:---|:---|:---|
+| 401/403 增加 | Key、权限、账号状态 | Key 创建时间、权限范围 |
+| 404 增加 | 模型 ID 或路由配置变化 | 当前模型目录与请求体 |
+| 429 增加 | 并发、额度、供应侧限流 | 并发数、Retry-After、重试次数 |
+| 5xx 增加 | 上游或网关异常 | request ID、时间窗口、地区 |
+| 状态码正常但 P95 上升 | 网络、排队、输出长度变化 | 首包耗时、Token、出口网络 |
 
-目录包括语言、生图、视频、向量和检索能力。模型 ID、维护状态与对应端点以模型广场、公告和控制台当前信息为准。
+稳定性统计只能告诉你“哪里变了”，不能自动证明根因。
 
-### 国内网络和企业采购呢？
+## 与模型检测的关系
 
-按AI快站当前产品说明，Claude、GPT、Gemini等国外模型在国内可直连、无需代理。不同运营商和部署网络仍应在生产前发起真实请求验证。企业客户可申请开具发票，具体流程以平台客服当前规则为准。
+[大模型 API 中转站检测](https://docs.aifast.club/model-check/?utm_source=github&utm_medium=repository&utm_campaign=model-check&utm_content=stability-readme)检查协议、模型声明、Token、动态题、SSE 和工具调用。它与稳定性数据互补：
 
-## 账户与交易信息
+- 模型检测回答“这次响应是否符合预期结构与行为”；
+- 稳定性记录回答“多次请求在指定条件下是否持续可用”；
+- 两者都不是模型厂商身份认证，也不能替代合同 SLA。
 
-账户、价格和交易规则可能调整，本技术仓不保存具体换算。采购前以当前控制台、服务条款和官方客服确认为准。
+## AI快站示例边界
 
-## 相关入口
+AI快站公开提供 500+ 模型、高速稳定、国外模型国内直连、自动故障切换和企业发票。具体模型 ID、维护状态和价格以[当前控制台](https://www.aifast.club)为准。本仓库不复制模型表，避免让静态样例变成过期目录。
 
-- [AI快站模型广场与控制台](https://www.aifast.club)
-- [目录和维护信息页面](https://kkwang4444.github.io/api-status/)
-- [接入指南](https://github.com/KKWANG4444/ai-api-proxy-china-guide)
-- [English](README_EN.md)
-
-## 项目地图
-
+- [状态与品牌事实](https://kkwang4444.github.io/api-status/evidence/)
+- [OpenAI Compatible API Doctor](https://github.com/KKWANG4444/llm-api-proxy-china)
+- [客户端接入指南](https://github.com/KKWANG4444/ai-api-proxy-china-guide)
+- [CLI、Postman 与 CI 模型检测](https://github.com/KKWANG4444/openai-compatible-api-check)
 - [AI快站开发者中心](https://github.com/KKWANG4444/aifast-developer-hub)
-- [浏览器在线检测第三方中转站](https://docs.aifast.club/model-check/?utm_source=github&utm_medium=repository&utm_campaign=developer-matrix&utm_content=stability-project-map)
-- [CLI、Postman 与 CI 自检工具](https://github.com/KKWANG4444/openai-compatible-api-check)
-- [检测报告判读与误判边界](https://kkwang4444.github.io/api-status/model-check/)
-- [客户端配置指南](https://github.com/KKWANG4444/ai-api-proxy-china-guide)
-- [生产排错与回退](https://github.com/KKWANG4444/llm-api-proxy-china)
-- [模型目录与证据中心](https://github.com/KKWANG4444/api-status)
-- [维护者主页](https://github.com/KKWANG4444)
 
----
-
-**披露：** 本仓库由 AI快站运营者维护，属于第一方状态与接入说明。生产决策应以真实请求、服务条款和当前控制台信息为准。
-
-> 如果你采用了这套测试记录格式，可以给仓库点个Star，让方法更容易被找到。
+**披露：** 本仓库由 AI快站运营者维护。第一方产品口径、测试窗口统计和合同 SLA 在文档中始终分开表述。

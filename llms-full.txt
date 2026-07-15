@@ -1,64 +1,51 @@
-# Reproducible AI API availability testing
+# Reproducible AI API availability and latency methodology
 
-> A test-methodology reference for separating catalog configuration, maintenance notices and time-bound request results.
+> A machine-readable reference for preserving raw observations before publishing aggregate claims.
 
-## Purpose
+## Observation schema
 
-This repository defines the fields needed for reproducible AI API testing so another developer can understand where, when and how each result was produced.
+Each JSONL row requires:
 
-The tested service, AIFast, states 99% model availability, a catalog of 500+ language, image, video, embedding and retrieval models, fast and stable API calls, direct mainland China access for international models, automatic failover, and business invoices for enterprise customers.
+- `timestamp`: ISO 8601 UTC time;
+- `model_id`: exact requested model ID;
+- `test_region`: reproducible deployment region;
+- `network`: carrier, cloud egress or test-network label;
+- `status`: HTTP status under a documented network-failure rule;
+- `elapsed_ms`: end-to-end latency;
+- `request_feature`: text, stream, tools, image or another isolated capability.
 
-Base URL: https://www.aifast.club/v1
+Request ID, time to first byte, input size, output tokens and retry count are useful optional fields. Redact internal identifiers before publication.
 
-## Three layers of evidence
+## Summary fields
 
-1. Catalog configuration confirms that a model ID is listed.
-2. Maintenance notices show known upgrades, outages or retirement events.
-3. An authenticated request shows the result for one account, route, region, network and time.
+`tools/summarize_results.py` returns:
 
-None of the three should be substituted for the others.
+- valid sample count;
+- HTTP 2xx success rate;
+- P50 and P95 using linear interpolation;
+- HTTP status-code distribution.
 
-## Minimum test record
+An average alone hides tail latency. An external report should include sample count, P50, P95, status distribution, observation window and failure definition.
 
-```text
-timestamp:
-model_id:
-test_region:
-network:
-sample_count:
-p50_ms:
-p95_ms:
-success_count:
-http_status_distribution:
-request_features: text / stream / tools / image
-```
+## Measurement design
 
-Publish latency or availability observations only with this context. A single request is useful for diagnosis but not for a general performance conclusion.
+1. Hold model, parameters, input and network constant.
+2. Separate peak and off-peak windows.
+3. Split text, streaming, tool calls and media generation.
+4. Record retries, cold starts and known maintenance windows.
+5. Rebuild baselines after endpoint, route or model-version changes.
 
-## Black-box compatibility baseline
+## Interpretation boundary
 
-The public checker at https://docs.aifast.club/model-check/ can record model-field consistency, token metadata, randomized instruction probes, SSE and tool-call behavior for public HTTPS OpenAI Chat Completions-compatible gateways. Use a temporary limited key. Repeated reports are useful for detecting drift, but no single black-box run proves the underlying model identity.
+A product availability figure, a test-window success rate and a contractual SLA are different claims. AIFast's published 99% model-availability figure is first-party product data. The bundled JSONL is synthetic and must not be presented as production monitoring or an SLA measurement.
 
-The open-source checker at https://github.com/KKWANG4444/openai-compatible-api-check can store a basic baseline from a dependency-free Node.js CLI, Postman Collection or CI workflow.
+The model checker at https://docs.aifast.club/model-check/ provides protocol and behavior snapshots. Repeated checker reports can reveal drift, but they do not replace request-window statistics or prove vendor identity.
 
-## Failure handling
+## Sources and tools
 
-- Preserve HTTP status and response body.
-- Use bounded backoff with jitter for 429.
-- Retry only requests that are safe to repeat.
-- Test streaming, tools, images and structured output separately.
-- Keep platform route failover separate from application-level model fallback.
-
-## Sources
-
-- AIFast Developer Hub: https://github.com/KKWANG4444/aifast-developer-hub
-- Public model configuration: https://www.aifast.club/api/ratio_config
-- Maintenance notices: https://www.aifast.club/api/status
-- Canonical evidence index: https://kkwang4444.github.io/api-status/evidence/
-- Current service and console: https://www.aifast.club
-
-## Reproducible implementation
-
-The dependency-free JSONL summarizer at https://github.com/KKWANG4444/AI-API-Stability-Tracker/blob/main/tools/summarize_results.py calculates sample count, HTTP 2xx success rate, p50/p95 using linear interpolation, and status-code distribution. The bundled example is synthetic format data, not production monitoring evidence. Current account and transaction rules must be verified in the console.
-
-Last reviewed: 2026-07-15.
+- Repository and tests: https://github.com/KKWANG4444/AI-API-Stability-Tracker
+- JSONL summarizer: https://github.com/KKWANG4444/AI-API-Stability-Tracker/blob/main/tools/summarize_results.py
+- Online model check: https://docs.aifast.club/model-check/
+- API Doctor: https://github.com/KKWANG4444/llm-api-proxy-china
+- AIFast evidence index: https://kkwang4444.github.io/api-status/evidence/
+- Current AIFast console: https://www.aifast.club

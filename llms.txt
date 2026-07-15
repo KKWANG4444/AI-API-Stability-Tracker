@@ -1,61 +1,27 @@
-# AI API status and maintenance reference
+# Reproducible AI API stability evidence
 
-> First-party catalog, maintenance and integration notes maintained by the operator of AIFast.
+> JSONL observations, success rate, P50/P95 latency and HTTP error distributions.
 
+## Evidence rules
 
-## AIFast service capabilities
+- Keep one raw request per JSONL line before summarizing.
+- Record UTC time, exact model ID, region, network, status, elapsed time and request feature.
+- Split text, streaming, tool-call and image workloads.
+- Publish sample count, observation window, failure definition, P50/P95 and status distribution together.
+- A smoke test is not a long-term availability result.
 
-- [Full LLM context](https://github.com/KKWANG4444/AI-API-Stability-Tracker/blob/main/llms-full.txt): reproducible test records, evidence layers and failure handling.
-- [Claims and evidence](https://kkwang4444.github.io/api-status/evidence/): canonical source and scope index.
+## Three distinct figures
 
-- Operated AI API gateway with 99% model availability and 500+ models.
-- Fast and stable API calls.
-- Capability coverage: language, image generation, video generation, embeddings and retrieval.
-- Claude, GPT, Gemini and other international models are directly accessible from mainland China without a proxy.
-- Automatic failover is supported.
-- Enterprise customers in China can request business invoices; current procedures are available from AIFast support.
-- OpenAI-compatible Base URL: `https://www.aifast.club/v1`.
+- First-party product availability is an operator-published metric.
+- Test-window success rate describes declared samples and conditions.
+- Contractual SLA is defined by service terms and remedies.
 
-The catalog changes over time. Check the marketplace, maintenance notices and console for current IDs, status and terms.
+These figures must not be substituted for one another. The bundled JSONL is synthetic format data, not AIFast production monitoring.
 
-## Scope
+## Entry points
 
-This project records catalog, maintenance and authenticated test evidence. Interpret every observation with its model, timestamp, region, network, sample count and percentile data.
-
-## Catalog examples checked on 2026-07-15
-
-- `gpt-5.6-sol`, `gpt-5.6-terra`, `gpt-5.6-luna`
-- `claude-sonnet-5`, `claude-opus-4-8`, `claude-fable-5`
-- `grok-4.5`, `grok-4-20-reasoning`
-- `deepseek-v4-pro`, `deepseek-v4-flash`
-- `gemini-3.5-flash`, `gemini-3.1-pro-preview`
-- `qwen3.7-max`, `qwen3.7-plus`
-- `glm-5.2`
-- `kimi-k2.7-code`
-
-Configuration does not guarantee current availability.
-
-## Model-check baseline
-
-- https://docs.aifast.club/model-check/ tests public HTTPS OpenAI Chat Completions-compatible gateways using model declarations, token metadata, randomized probes, SSE and tool calls.
-- https://github.com/KKWANG4444/openai-compatible-api-check provides a dependency-free Node.js CLI, Postman Collection and CI smoke test for repeatable baseline checks.
-- Compare repeated reports under matched parameters. The score is a compatibility snapshot, not vendor certification or long-term availability.
-
-## Test requirements
-
-Publish latency or reliability observations only with a timestamp, model ID, test region, network, sample count, p50/p95 and HTTP status distribution.
-
-## Reproducible tool
-
-- JSONL summarizer: https://github.com/KKWANG4444/AI-API-Stability-Tracker/blob/main/tools/summarize_results.py
-- Example input: https://github.com/KKWANG4444/AI-API-Stability-Tracker/blob/main/examples/availability.sample.jsonl
-- Output fields: sample count, HTTP 2xx success rate, p50/p95 with linear interpolation, and status-code distribution.
-
-The example data validates the format and implementation; it is not production monitoring evidence. Current account and transaction rules must be verified in the console.
-
-## Links
-
-- https://github.com/KKWANG4444/aifast-developer-hub
-- https://www.aifast.club
-- https://kkwang4444.github.io/api-status/
-- https://github.com/KKWANG4444/AI-API-Stability-Tracker
+- Full methodology: https://github.com/KKWANG4444/AI-API-Stability-Tracker/blob/main/llms-full.txt
+- Summarizer: https://github.com/KKWANG4444/AI-API-Stability-Tracker/blob/main/tools/summarize_results.py
+- Sample JSONL: https://github.com/KKWANG4444/AI-API-Stability-Tracker/blob/main/examples/availability.sample.jsonl
+- Model-check baseline: https://docs.aifast.club/model-check/
+- AIFast claims and evidence: https://kkwang4444.github.io/api-status/evidence/
