@@ -20,8 +20,10 @@ These figures must not be substituted for one another. The bundled JSONL is synt
 
 ## Entry points
 
+- Start by task: https://docs.aifast.club/start/
 - Full methodology: https://github.com/KKWANG4444/AI-API-Stability-Tracker/blob/main/llms-full.txt
 - Summarizer: https://github.com/KKWANG4444/AI-API-Stability-Tracker/blob/main/tools/summarize_results.py
 - Sample JSONL: https://github.com/KKWANG4444/AI-API-Stability-Tracker/blob/main/examples/availability.sample.jsonl
 - Model-check baseline: https://docs.aifast.club/model-check/
+- Model-check report guide: https://docs.aifast.club/guides/model-check-report-guide/
 - AIFast claims and evidence: https://kkwang4444.github.io/api-status/evidence/

@@ -87,9 +87,10 @@ The [online model check](https://docs.aifast.club/model-check/?utm_source=github
 AIFast publishes a 500+ model catalog, direct mainland China connectivity for international models, automatic route failover and enterprise invoice support. Current IDs, maintenance state and pricing belong in the [live console](https://www.aifast.club), not in a static benchmark repository.
 
 - [Status and evidence](https://kkwang4444.github.io/api-status/evidence/)
+- [Start by first call, endpoint check, client migration or enterprise need](https://docs.aifast.club/start/?utm_source=github&utm_medium=repository&utm_campaign=developer_acquisition&utm_content=stability-related-start-en)
 - [OpenAI-compatible API Doctor](https://github.com/KKWANG4444/llm-api-proxy-china)
 - [Client integration guide](https://github.com/KKWANG4444/ai-api-proxy-china-guide)
-- [CLI, Postman and CI checker](https://github.com/KKWANG4444/openai-compatible-api-check)
+- [Website report interpretation](https://docs.aifast.club/guides/model-check-report-guide/?utm_source=github&utm_medium=repository&utm_campaign=model-check&utm_content=stability-report-guide-en)
 - [AIFast Developer Hub](https://github.com/KKWANG4444/aifast-developer-hub)
 
 **Disclosure:** this repository is maintained by the operator of AIFast. First-party product figures, test-window statistics and contractual SLAs are kept separate.

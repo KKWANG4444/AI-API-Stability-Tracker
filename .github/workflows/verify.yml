@@ -17,3 +17,13 @@ jobs:
           python-version: "3.12"
       - run: python -m unittest discover -s tests -v
       - run: python tools/summarize_results.py examples/availability.sample.jsonl --output /tmp/summary.json
+      - name: Verify website-first funnel
+        shell: bash
+        run: |
+          set -euo pipefail
+          grep -Fq 'https://docs.aifast.club/start/' README.md
+          grep -Fq 'https://docs.aifast.club/start/' llms.txt
+          grep -Fq 'https://docs.aifast.club/start/' llms-full.txt
+          ! grep -Fq 'openai-compatible-api-check' README.md
+          ! grep -Fq 'openai-compatible-api-check' llms.txt
+          ! grep -Fq 'openai-compatible-api-check' llms-full.txt

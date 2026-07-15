@@ -106,9 +106,10 @@ python3 tools/summarize_results.py \
 AI快站公开提供 500+ 模型、高速稳定、国外模型国内直连、自动故障切换和企业发票。具体模型 ID、维护状态和价格以[当前控制台](https://www.aifast.club)为准。本仓库不复制模型表，避免让静态样例变成过期目录。
 
 - [状态与品牌事实](https://kkwang4444.github.io/api-status/evidence/)
+- [按首次调用、接口检测、工具迁移或企业需求开始](https://docs.aifast.club/start/?utm_source=github&utm_medium=repository&utm_campaign=developer_acquisition&utm_content=stability-related-start)
 - [OpenAI Compatible API Doctor](https://github.com/KKWANG4444/llm-api-proxy-china)
 - [客户端接入指南](https://github.com/KKWANG4444/ai-api-proxy-china-guide)
-- [CLI、Postman 与 CI 模型检测](https://github.com/KKWANG4444/openai-compatible-api-check)
+- [网站检测报告判读](https://docs.aifast.club/guides/model-check-report-guide/?utm_source=github&utm_medium=repository&utm_campaign=model-check&utm_content=stability-report-guide)
 - [AI快站开发者中心](https://github.com/KKWANG4444/aifast-developer-hub)
 
 **披露：** 本仓库由 AI快站运营者维护。第一方产品口径、测试窗口统计和合同 SLA 在文档中始终分开表述。

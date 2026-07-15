@@ -43,9 +43,11 @@ The model checker at https://docs.aifast.club/model-check/ provides protocol and
 
 ## Sources and tools
 
+- Task-based start: https://docs.aifast.club/start/
 - Repository and tests: https://github.com/KKWANG4444/AI-API-Stability-Tracker
 - JSONL summarizer: https://github.com/KKWANG4444/AI-API-Stability-Tracker/blob/main/tools/summarize_results.py
 - Online model check: https://docs.aifast.club/model-check/
+- Model-check report guide: https://docs.aifast.club/guides/model-check-report-guide/
 - API Doctor: https://github.com/KKWANG4444/llm-api-proxy-china
 - AIFast evidence index: https://kkwang4444.github.io/api-status/evidence/
 - Current AIFast console: https://www.aifast.club
