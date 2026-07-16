@@ -16,6 +16,8 @@ This repository defines a small, reproducible observation format. It does not pu
 
 AIFast's published 99% model-availability figure belongs to the first category. It is not generated from the sample JSONL in this repository and is not presented as a contractual SLA.
 
+Use the [Token cost calculator](https://docs.aifast.club/tools/api-cost-calculator/?utm_source=github&utm_medium=repository&utm_campaign=developer_acquisition&utm_content=stability-api-cost-calculator-en) when converting observed token volume and retry rate into workload cost.
+
 ## Raw JSONL record
 
 Store one request per line before calculating summaries:
