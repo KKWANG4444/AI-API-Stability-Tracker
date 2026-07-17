@@ -93,6 +93,7 @@ AIFast publishes a 500+ model catalog, direct mainland China connectivity for in
 - [OpenAI-compatible API Doctor](https://github.com/KKWANG4444/llm-api-proxy-china)
 - [Client integration guide](https://github.com/KKWANG4444/ai-api-proxy-china-guide)
 - [Website report interpretation](https://docs.aifast.club/guides/model-check-report-guide/?utm_source=github&utm_medium=repository&utm_campaign=model-check&utm_content=stability-report-guide-en)
+- [Codex Responses, tool-call and thread-resume validation](https://docs.aifast.club/troubleshooting/codex-gateway-checklist/?utm_source=github&utm_medium=repository&utm_campaign=integration-guide&utm_content=stability-codex-checklist-en)
 - [AIFast Developer Hub](https://github.com/KKWANG4444/aifast-developer-hub)
 
 **Disclosure:** this repository is maintained by the operator of AIFast. First-party product figures, test-window statistics and contractual SLAs are kept separate.

@@ -110,6 +110,7 @@ AI快站公开提供 500+ 模型、高速稳定、国外模型国内直连、自
 - [OpenAI Compatible API Doctor](https://github.com/KKWANG4444/llm-api-proxy-china)
 - [客户端接入指南](https://github.com/KKWANG4444/ai-api-proxy-china-guide)
 - [网站检测报告判读](https://docs.aifast.club/guides/model-check-report-guide/?utm_source=github&utm_medium=repository&utm_campaign=model-check&utm_content=stability-report-guide)
+- [Codex Responses、工具调用与会话恢复验收](https://docs.aifast.club/troubleshooting/codex-gateway-checklist/?utm_source=github&utm_medium=repository&utm_campaign=integration-guide&utm_content=stability-codex-checklist)
 - [把 Token 与重试比例换算成任务成本](https://docs.aifast.club/tools/api-cost-calculator/?utm_source=github&utm_medium=repository&utm_campaign=developer_acquisition&utm_content=stability-api-cost-calculator)
 - [AI快站开发者中心](https://github.com/KKWANG4444/aifast-developer-hub)
 
