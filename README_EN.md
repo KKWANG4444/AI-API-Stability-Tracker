@@ -16,7 +16,7 @@ This repository defines a small, reproducible observation format. It does not pu
 
 AIFast's published 99% model-availability figure belongs to the first category. It is not generated from the sample JSONL in this repository and is not presented as a contractual SLA.
 
-Use the [Token cost calculator](https://docs.aifast.club/tools/api-cost-calculator/?utm_source=github&utm_medium=repository&utm_campaign=developer_acquisition&utm_content=stability-api-cost-calculator-en) when converting observed token volume and retry rate into workload cost.
+Use the [Token cost calculator](https://docs.aifast.club/en/tools/api-cost-calculator/?utm_source=github&utm_medium=repository&utm_campaign=developer_acquisition&utm_content=stability-api-cost-calculator-en) when converting observed token volume and retry rate into workload cost.
 
 ## Raw JSONL record
 
@@ -82,18 +82,18 @@ Statistics identify where behavior changed; they do not establish the root cause
 
 ## Relationship to model checking
 
-The [online model check](https://docs.aifast.club/model-check/?utm_source=github&utm_medium=repository&utm_campaign=model-check&utm_content=stability-readme-en) samples protocol structure, model claims, token arithmetic, dynamic tasks, SSE and tool calls. Stability records answer a different question: whether repeated requests remain usable under declared conditions. Neither is vendor identity certification or a contractual SLA.
+The [online model check](https://docs.aifast.club/en/model-check/?utm_source=github&utm_medium=repository&utm_campaign=model-check&utm_content=stability-readme-en) samples protocol structure, model claims, token arithmetic, dynamic tasks, SSE and tool calls. Stability records answer a different question: whether repeated requests remain usable under declared conditions. Neither is vendor identity certification or a contractual SLA.
 
 ## AIFast example boundary
 
 AIFast publishes a 500+ model catalog, direct mainland China connectivity for international models, automatic route failover and enterprise invoice support. Current IDs, maintenance state and pricing belong in the [live console](https://www.aifast.club), not in a static benchmark repository.
 
 - [Status and evidence](https://kkwang4444.github.io/api-status/evidence/)
-- [Start by first call, endpoint check, client migration or enterprise need](https://docs.aifast.club/start/?utm_source=github&utm_medium=repository&utm_campaign=developer_acquisition&utm_content=stability-related-start-en)
+- [Start by first call, endpoint check, client migration or enterprise need](https://docs.aifast.club/en/start/?utm_source=github&utm_medium=repository&utm_campaign=developer_acquisition&utm_content=stability-related-start-en)
 - [OpenAI-compatible API Doctor](https://github.com/KKWANG4444/llm-api-proxy-china)
 - [Client integration guide](https://github.com/KKWANG4444/ai-api-proxy-china-guide)
-- [Website report interpretation](https://docs.aifast.club/guides/model-check-report-guide/?utm_source=github&utm_medium=repository&utm_campaign=model-check&utm_content=stability-report-guide-en)
-- [Codex Responses, tool-call and thread-resume validation](https://docs.aifast.club/troubleshooting/codex-gateway-checklist/?utm_source=github&utm_medium=repository&utm_campaign=integration-guide&utm_content=stability-codex-checklist-en)
+- [Website report interpretation](https://docs.aifast.club/en/guides/model-check-report-guide/?utm_source=github&utm_medium=repository&utm_campaign=model-check&utm_content=stability-report-guide-en)
+- [Codex Responses, tool-call and thread-resume validation](https://docs.aifast.club/en/troubleshooting/codex-gateway-checklist/?utm_source=github&utm_medium=repository&utm_campaign=integration-guide&utm_content=stability-codex-checklist-en)
 - [AIFast Developer Hub](https://github.com/KKWANG4444/aifast-developer-hub)
 
 **Disclosure:** this repository is maintained by the operator of AIFast. First-party product figures, test-window statistics and contractual SLAs are kept separate.

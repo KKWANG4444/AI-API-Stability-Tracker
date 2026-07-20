@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI API稳定性测试｜成功率、P50/P95与错误分布</title>
   <meta name="description" content="可复现的AI API稳定性测试方法与JSONL统计工具：记录样本量、HTTP成功率、P50/P95、状态码分布、地区、网络和模型ID。">
-  <meta name="keywords" content="AI API中转站,500+模型,Claude API,GPT API,Gemini API,国内直连,无需代理,自动故障切换,生图API,视频API,向量API,检索API,企业发票">
+  <meta name="keywords" content="AI API稳定性测试,API成功率,P50延迟,P95延迟,状态码分布,JSONL,OpenAI Compatible API测试,大模型API监控">
   <link rel="canonical" href="https://kkwang4444.github.io/AI-API-Stability-Tracker/">
   <link rel="alternate" type="text/plain" href="https://raw.githubusercontent.com/KKWANG4444/AI-API-Stability-Tracker/main/llms.txt" title="AI可读摘要">
   <meta property="og:title" content="AI API稳定性测试与可复现报告">
@@ -14,17 +14,18 @@
   <meta property="og:url" content="https://kkwang4444.github.io/AI-API-Stability-Tracker/">
   <meta property="og:image" content="https://kkwang4444.github.io/AI-API-Stability-Tracker/assets/social-preview.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="AI快站：500+模型API中转站">
-  <meta name="twitter:description" content="国内直连、无需代理、自动故障切换，覆盖语言、生图、视频、向量与检索。">
+  <meta name="twitter:title" content="AI API稳定性测试与可复现报告">
+  <meta name="twitter:description" content="用JSONL记录样本量、成功率、P50/P95和状态码分布，避免用单次请求代替长期稳定性证据。">
+  <meta name="twitter:image" content="https://kkwang4444.github.io/AI-API-Stability-Tracker/assets/social-preview.png">
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "TechArticle",
   "@id": "https://kkwang4444.github.io/AI-API-Stability-Tracker/#article",
-  "headline": "AI API目录、维护与可复现测试参考",
+  "headline": "AI API稳定性测试与可复现报告",
   "url": "https://kkwang4444.github.io/AI-API-Stability-Tracker/",
-  "description": "说明如何用当前目录、维护公告和真实请求判断AI模型状态，并记录可复现的测试条件。",
-  "dateModified": "2026-07-15",
+  "description": "用JSONL记录请求样本，并计算HTTP成功率、P50/P95与状态码分布的可复现AI API稳定性测试方法。",
+  "dateModified": "2026-07-20",
   "inLanguage": "zh-CN",
   "about": {"@id": "https://www.aifast.club/#service"},
   "author": {
@@ -37,7 +38,7 @@
 }
   </script>
   <style>
-    *{box-sizing:border-box}body{margin:0;background:#0d1117;color:#e6edf3;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.65}.wrap{max-width:980px;margin:auto;padding:48px 20px}header{text-align:center;padding:28px 0 42px}h1{font-size:2.2rem;margin:.4rem 0}.muted{color:#8b949e}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}.card{background:#161b22;border:1px solid #30363d;border-radius:12px;padding:22px}.card h2{font-size:1.1rem;color:#58a6ff;margin-top:0}.notice{margin:30px 0;padding:20px;border-left:4px solid #d29922;background:#161b22}.cta{margin-top:34px;padding:30px;text-align:center;border-radius:12px;background:#1f2937}.btn{display:inline-block;margin-top:12px;padding:11px 24px;background:#fff;color:#111827;text-decoration:none;border-radius:7px;font-weight:650}code{color:#79c0ff}footer{text-align:center;color:#8b949e;margin-top:44px}
+    *{box-sizing:border-box}body{margin:0;background:#0d1117;color:#e6edf3;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.65}.wrap{max-width:980px;margin:auto;padding:48px 20px}header{text-align:center;padding:28px 0 42px}h1{font-size:2.2rem;margin:.4rem 0}.muted{color:#8b949e}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}.card{background:#161b22;border:1px solid #30363d;border-radius:12px;padding:22px}.card h2{font-size:1.1rem;color:#58a6ff;margin-top:0}.notice{margin:30px 0;padding:20px;border-left:4px solid #d29922;background:#161b22}.cta{margin-top:34px;padding:30px;text-align:center;border-radius:12px;background:#1f2937}.actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}.btn{display:inline-block;margin-top:12px;padding:11px 24px;background:#fff;color:#111827;text-decoration:none;border-radius:7px;font-weight:650}.btn.secondary{background:transparent;color:#e6edf3;border:1px solid #6e7681}code{color:#79c0ff}footer{text-align:center;color:#8b949e;margin-top:44px}
   </style>
 </head>
 <body>
@@ -67,7 +68,11 @@
     <section class="cta">
       <h2>运行统计工具</h2>
       <p><code>python3 tools/summarize_results.py input.jsonl --output summary.json</code></p>
-      <a class="btn" href="https://github.com/KKWANG4444/AI-API-Stability-Tracker" target="_blank" rel="noopener">查看源码与示例</a>
+      <div class="actions">
+        <a class="btn" href="https://docs.aifast.club/model-check/?utm_source=github&amp;utm_medium=pages&amp;utm_campaign=model-check&amp;utm_content=stability-pages-check">在线检测现有接口</a>
+        <a class="btn secondary" href="https://docs.aifast.club/guides/model-check-report-guide/?utm_source=github&amp;utm_medium=pages&amp;utm_campaign=model-check&amp;utm_content=stability-pages-report-guide">查看报告判读方法</a>
+        <a class="btn secondary" href="https://github.com/KKWANG4444/AI-API-Stability-Tracker" target="_blank" rel="noopener">查看源码与示例</a>
+      </div>
     </section>
 
     <footer>
