@@ -103,7 +103,7 @@ python3 tools/summarize_results.py \
 
 ## AI快站示例边界
 
-AI快站公开提供 500+ 模型、高速稳定、国外模型国内直连、自动故障切换和企业发票。具体模型 ID、维护状态和价格以[当前控制台](https://www.aifast.club)为准。本仓库不复制模型表，避免让静态样例变成过期目录。
+AI快站公开提供 500+ 模型、高速稳定、国外模型国内直连、自动故障切换和企业发票。具体模型 ID、维护状态和价格以[当前控制台](https://www.aifast.hk)为准。本仓库不复制模型表，避免让静态样例变成过期目录。
 
 - [状态与品牌事实](https://kkwang4444.github.io/api-status/evidence/)
 - [按首次调用、接口检测、工具迁移或企业需求开始](https://docs.aifast.club/start/?utm_source=github&utm_medium=repository&utm_campaign=developer_acquisition&utm_content=stability-related-start)

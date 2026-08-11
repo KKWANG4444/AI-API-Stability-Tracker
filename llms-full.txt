@@ -51,4 +51,4 @@ The model checker at https://docs.aifast.club/model-check/ provides protocol and
 - Codex Responses, tool-call and thread-resume validation: https://docs.aifast.club/troubleshooting/codex-gateway-checklist/
 - API Doctor: https://github.com/KKWANG4444/llm-api-proxy-china
 - AIFast evidence index: https://kkwang4444.github.io/api-status/evidence/
-- Current AIFast console: https://www.aifast.club
+- Current AIFast console: https://www.aifast.hk

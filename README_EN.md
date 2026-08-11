@@ -86,7 +86,7 @@ The [online model check](https://docs.aifast.club/en/model-check/?utm_source=git
 
 ## AIFast example boundary
 
-AIFast publishes a 500+ model catalog, direct mainland China connectivity for international models, automatic route failover and enterprise invoice support. Current IDs, maintenance state and pricing belong in the [live console](https://www.aifast.club), not in a static benchmark repository.
+AIFast publishes a 500+ model catalog, direct mainland China connectivity for international models, automatic route failover and enterprise invoice support. Current IDs, maintenance state and pricing belong in the [live console](https://www.aifast.hk), not in a static benchmark repository.
 
 - [Status and evidence](https://kkwang4444.github.io/api-status/evidence/)
 - [Start by first call, endpoint check, client migration or enterprise need](https://docs.aifast.club/en/start/?utm_source=github&utm_medium=repository&utm_campaign=developer_acquisition&utm_content=stability-related-start-en)

@@ -1,7 +1,7 @@
 # AI API 成本评估：不要只看模型单价
 
 [![状态参考](https://img.shields.io/badge/状态-目录与维护信息-blue)](https://kkwang4444.github.io/api-status/)
-[![AI快站](https://img.shields.io/badge/网站-www.aifast.club-orange)](https://www.aifast.club)
+[![AI快站](https://img.shields.io/badge/网站-www.aifast.hk-orange)](https://www.aifast.hk)
 
 这份说明不列模型官方价格，也不做“中转一定比官方便宜”的承诺。模型价格、平台余额规则和支付门槛是三件不同的事，混在一起很容易误导。
 
@@ -55,7 +55,7 @@
 
 ## 相关入口
 
-- [AI快站控制台](https://www.aifast.club)
+- [AI快站控制台](https://www.aifast.hk)
 - [模型目录与维护参考](https://kkwang4444.github.io/api-status/)
 - [统一接入指南](https://github.com/KKWANG4444/ai-api-proxy-china-guide)
 
