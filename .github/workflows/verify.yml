@@ -21,9 +21,9 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          grep -Fq 'https://docs.aifast.club/start/' README.md
-          grep -Fq 'https://docs.aifast.club/start/' llms.txt
-          grep -Fq 'https://docs.aifast.club/start/' llms-full.txt
+          grep -Fq 'https://docs.aifast.hk/start/' README.md
+          grep -Fq 'https://docs.aifast.hk/start/' llms.txt
+          grep -Fq 'https://docs.aifast.hk/start/' llms-full.txt
           ! grep -Fq 'openai-compatible-api-check' README.md
           ! grep -Fq 'openai-compatible-api-check' llms.txt
           ! grep -Fq 'openai-compatible-api-check' llms-full.txt

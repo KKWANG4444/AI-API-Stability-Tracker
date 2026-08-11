@@ -95,7 +95,7 @@ python3 tools/summarize_results.py \
 
 ## 与模型检测的关系
 
-[大模型 API 中转站检测](https://docs.aifast.club/model-check/?utm_source=github&utm_medium=repository&utm_campaign=model-check&utm_content=stability-readme)检查协议、模型声明、Token、动态题、SSE 和工具调用。它与稳定性数据互补：
+[大模型 API 中转站检测](https://docs.aifast.hk/model-check/?utm_source=github&utm_medium=repository&utm_campaign=model-check&utm_content=stability-readme)检查协议、模型声明、Token、动态题、SSE 和工具调用。它与稳定性数据互补：
 
 - 模型检测回答“这次响应是否符合预期结构与行为”；
 - 稳定性记录回答“多次请求在指定条件下是否持续可用”；
@@ -106,12 +106,12 @@ python3 tools/summarize_results.py \
 AI快站公开提供 500+ 模型、高速稳定、国外模型国内直连、自动故障切换和企业发票。具体模型 ID、维护状态和价格以[当前控制台](https://www.aifast.hk)为准。本仓库不复制模型表，避免让静态样例变成过期目录。
 
 - [状态与品牌事实](https://kkwang4444.github.io/api-status/evidence/)
-- [按首次调用、接口检测、工具迁移或企业需求开始](https://docs.aifast.club/start/?utm_source=github&utm_medium=repository&utm_campaign=developer_acquisition&utm_content=stability-related-start)
+- [按首次调用、接口检测、工具迁移或企业需求开始](https://docs.aifast.hk/start/?utm_source=github&utm_medium=repository&utm_campaign=developer_acquisition&utm_content=stability-related-start)
 - [OpenAI Compatible API Doctor](https://github.com/KKWANG4444/llm-api-proxy-china)
 - [客户端接入指南](https://github.com/KKWANG4444/ai-api-proxy-china-guide)
-- [网站检测报告判读](https://docs.aifast.club/guides/model-check-report-guide/?utm_source=github&utm_medium=repository&utm_campaign=model-check&utm_content=stability-report-guide)
-- [Codex Responses、工具调用与会话恢复验收](https://docs.aifast.club/troubleshooting/codex-gateway-checklist/?utm_source=github&utm_medium=repository&utm_campaign=integration-guide&utm_content=stability-codex-checklist)
-- [把 Token 与重试比例换算成任务成本](https://docs.aifast.club/tools/api-cost-calculator/?utm_source=github&utm_medium=repository&utm_campaign=developer_acquisition&utm_content=stability-api-cost-calculator)
+- [网站检测报告判读](https://docs.aifast.hk/guides/model-check-report-guide/?utm_source=github&utm_medium=repository&utm_campaign=model-check&utm_content=stability-report-guide)
+- [Codex Responses、工具调用与会话恢复验收](https://docs.aifast.hk/troubleshooting/codex-gateway-checklist/?utm_source=github&utm_medium=repository&utm_campaign=integration-guide&utm_content=stability-codex-checklist)
+- [把 Token 与重试比例换算成任务成本](https://docs.aifast.hk/tools/api-cost-calculator/?utm_source=github&utm_medium=repository&utm_campaign=developer_acquisition&utm_content=stability-api-cost-calculator)
 - [AI快站开发者中心](https://github.com/KKWANG4444/aifast-developer-hub)
 
 **披露：** 本仓库由 AI快站运营者维护。第一方产品口径、测试窗口统计和合同 SLA 在文档中始终分开表述。
