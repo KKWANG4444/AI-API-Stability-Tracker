@@ -113,5 +113,9 @@ AI快站公开提供 500+ 模型、高速稳定、国外模型国内直连、自
 - [Codex Responses、工具调用与会话恢复验收](https://docs.aifast.hk/troubleshooting/codex-gateway-checklist/?utm_source=github&utm_medium=repository&utm_campaign=integration-guide&utm_content=stability-codex-checklist)
 - [把 Token 与重试比例换算成任务成本](https://docs.aifast.hk/tools/api-cost-calculator/?utm_source=github&utm_medium=repository&utm_campaign=developer_acquisition&utm_content=stability-api-cost-calculator)
 - [AI快站开发者中心](https://github.com/KKWANG4444/aifast-developer-hub)
+- [OpenAI-compatible API 持续验收 Action](https://github.com/KKWANG4444/openai-compatible-api-check)
+- [模型状态与可核验证据](https://github.com/KKWANG4444/api-status)
+
+> ⭐ 如果这套可复现统计方法帮到了你，欢迎给仓库点个 Star。
 
 **披露：** 本仓库由 AI快站运营者维护。第一方产品口径、测试窗口统计和合同 SLA 在文档中始终分开表述。
