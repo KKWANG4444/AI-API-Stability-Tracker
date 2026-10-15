@@ -9,6 +9,16 @@
 
 这个仓库提供一套最小、可复现的稳定性记录格式。它不发布缺少样本和测试条件的“稳定率榜单”，也不把一次成功请求当成长期可用性证据。
 
+## Gemini 4 Argon 上架（2026-10-15 核验）
+
+AI快站于 2026-10-14 [公告上架](https://www.aifast.hk/api/status) `gemini-4-argon`。当前[模型目录](https://www.aifast.hk/pricing)标记 `available: true`，列出 `gemini`、`openai` 协议；OpenAI-compatible Base URL 为 `https://www.aifast.hk/v1`。
+
+[Google 模型文档](https://ai.google.dev/gemini-api/docs/models/gemini-4-argon)将 Argon 定位为面向复杂软件工程、数学、科学问题和多步骤 Agent 的旗舰推理模型。其 1,048,576 Token 统一上下文预算由输入、思考和输出共享，不能据此承诺网关支持 1M 输出；Google 的长输出需要专门工作流。
+
+这是上架与目录核验，不是推理实测或稳定性基准。本次更新未执行鉴权推理请求，不提供 Argon 成功率、延迟或长期 SLA。价格、额度和各项协议能力请以当前控制台及独立测试为准。
+
+[用临时、低额度 Key 检测现有接口](https://docs.aifast.hk/model-check/?utm_source=github&utm_medium=repository&utm_campaign=gemini-4-argon-launch&utm_content=stability-readme-zh)，再按实际部署网络分别验证文本、流式与工具调用。
+
 ## 先区分三类数字
 
 | 数字 | 来源 | 可以说明什么 | 不能说明什么 |
