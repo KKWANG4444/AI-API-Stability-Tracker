@@ -62,7 +62,9 @@ class SitemapTests(unittest.TestCase):
 
     def test_stale_date_rejected(self):
         tree = ElementTree.fromstring((ROOT / 'sitemap.xml').read_text(encoding='utf-8'))
-        tree.find('s:url/s:lastmod', NS).text = '2000-01-01'
+        lastmod = tree.find('s:url/s:lastmod', NS)
+        assert lastmod is not None, 'Sitemap 缺少 lastmod'
+        lastmod.text = '2000-01-01'
         xml = ElementTree.tostring(tree, encoding='unicode')
         with self.assertRaisesRegex(AssertionError, '日期与页面更新时间不一致'):
             audit(xml)
