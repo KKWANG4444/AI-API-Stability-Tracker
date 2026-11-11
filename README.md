@@ -9,6 +9,14 @@
 
 这个仓库提供一套最小、可复现的稳定性记录格式。它不发布缺少样本和测试条件的“稳定率榜单”，也不把一次成功请求当成长期可用性证据。
 
+## Gemini 4 Carbon 上架（2026-11-11 核验）
+
+AI快站于 2026-11-11 [公告上架](https://www.aifast.hk/api/announcements) `gemini-4-carbon`。[公开目录](https://www.aifast.hk/api/pricing)标记 `available: true`，列出 `gemini`、`openai` 端点类型，分组为 `Aistudio-Gemini-2/3/4`、`Vertex-Gemini-2/3`。OpenAI-compatible Base URL：`https://www.aifast.hk/v1`。
+
+本条仅记录上架公告与目录核验，未执行鉴权推理请求，不提供 Carbon 成功率、延迟、稳定性基准或 SLA；流式与工具调用仍需分别验证。
+
+[查看当前模型目录](https://www.aifast.hk/pricing) · [Gemini 接入指南](https://docs.aifast.hk/providers/gemini-api/) · [用临时、低额度 Key 检测接口](https://docs.aifast.hk/model-check/)
+
 ## Gemini 4 Argon 上架（2026-10-15 核验）
 
 AI快站于 2026-10-14 [公告上架](https://www.aifast.hk/api/status) `gemini-4-argon`。当前[模型目录](https://www.aifast.hk/pricing)标记 `available: true`，列出 `gemini`、`openai` 协议；OpenAI-compatible Base URL 为 `https://www.aifast.hk/v1`。

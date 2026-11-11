@@ -2,6 +2,14 @@
 
 > A machine-readable reference for preserving raw observations before publishing aggregate claims.
 
+## Gemini 4 Carbon launch (checked 2026-11-11)
+
+AIFast [announced the listing](https://www.aifast.hk/api/announcements) of `gemini-4-carbon` on 2026-11-11. The [public catalog](https://www.aifast.hk/api/pricing) marks it `available: true`, lists `gemini` and `openai` endpoint types, and includes groups `Aistudio-Gemini-2/3/4` and `Vertex-Gemini-2/3`. OpenAI-compatible Base URL: `https://www.aifast.hk/v1`.
+
+This entry records the launch announcement and catalog check only. No authenticated inference request was run; it supplies no Carbon success rate, latency, stability benchmark or SLA. Streaming and tool calls need separate validation.
+
+[Current model catalog](https://www.aifast.hk/pricing) · [Gemini integration guide](https://docs.aifast.hk/en/providers/gemini-api/) · [Check a gateway with a temporary, low-limit key](https://docs.aifast.hk/model-check/)
+
 ## Gemini 4 Argon launch (checked 2026-10-15)
 
 AIFast [announced the listing](https://www.aifast.hk/api/status) of `gemini-4-argon` on 2026-10-14. The current [catalog](https://www.aifast.hk/pricing) marks it `available: true` and lists `gemini` and `openai` protocols. The OpenAI-compatible Base URL is `https://www.aifast.hk/v1`.
