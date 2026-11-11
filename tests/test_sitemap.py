@@ -48,10 +48,21 @@ def audit(xml):
 
 
 class SitemapTests(unittest.TestCase):
+    def test_carbon_launch_reaches_page_and_documents(self):
+        for name in ['index.html', 'README.md', 'README_EN.md', 'llms.txt', 'llms-full.txt']:
+            content = (ROOT / name).read_text(encoding='utf-8')
+            for token in ['gemini-4-carbon', '2026-11-11', 'https://www.aifast.hk/v1', 'https://www.aifast.hk/api/announcements']:
+                self.assertIn(token, content, name)
+        page = (ROOT / 'index.html').read_text(encoding='utf-8')
+        self.assertIn('没有执行鉴权推理请求', page)
+        self.assertIn('utm_campaign=gemini-4-carbon', page)
+
     def test_current_sitemap(self):
         audit((ROOT / 'sitemap.xml').read_text(encoding='utf-8'))
 
     def test_stale_date_rejected(self):
-        xml = (ROOT / 'sitemap.xml').read_text(encoding='utf-8').replace('2026-10-15', '2026-09-01')
+        tree = ElementTree.fromstring((ROOT / 'sitemap.xml').read_text(encoding='utf-8'))
+        tree.find('s:url/s:lastmod', NS).text = '2000-01-01'
+        xml = ElementTree.tostring(tree, encoding='unicode')
         with self.assertRaisesRegex(AssertionError, '日期与页面更新时间不一致'):
             audit(xml)

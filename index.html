@@ -25,7 +25,7 @@
   "headline": "AI API稳定性测试与可复现报告",
   "url": "https://kkwang4444.github.io/AI-API-Stability-Tracker/",
   "description": "用JSONL记录请求样本，并计算HTTP成功率、P50/P95与状态码分布的可复现AI API稳定性测试方法。",
-  "dateModified": "2026-10-15",
+  "dateModified": "2026-11-11",
   "inLanguage": "zh-CN",
   "about": {"@id": "https://www.aifast.hk/#service"},
   "author": {
@@ -63,6 +63,14 @@
       <article class="card"><h2>JSONL证据格式</h2><p>每次请求记录时间、模型 ID、地区、网络、HTTP状态、耗时和请求特征。</p></article>
       <article class="card"><h2>可复算统计</h2><p>标准库脚本输出样本量、2xx成功率、P50/P95和状态码分布。</p></article>
       <article class="card"><h2>生产策略</h2><p>重试要有上限和抖动。模型回退应由应用控制，并记录最终响应模型。</p></article>
+    </section>
+
+    <section class="notice" id="gemini-4-carbon">
+      <h2>Gemini 4 Carbon 已上架 · 2026-11-11</h2>
+      <p>AI快站<a href="https://www.aifast.hk/api/announcements">上架公告</a>与<a href="https://www.aifast.hk/api/pricing">公开目录</a>均列出 <code>gemini-4-carbon</code>。目录标记 <code>available: true</code>，声明 <code>gemini</code>、<code>openai</code> 端点类型；OpenAI-compatible Base URL 为 <code>https://www.aifast.hk/v1</code>。调用前请核对 Key 分组权限。</p>
+      <p>本条记录上架信息，没有执行鉴权推理请求，也没有新增测试样本。Carbon 的成功率、P50/P95、流式和工具调用需要单独采样验证。</p>
+      <p lang="en">Gemini 4 Carbon is listed in the AIFast catalog. No authenticated inference or stability benchmark was run for this announcement.</p>
+      <a class="btn" href="https://docs.aifast.hk/model-check/?utm_source=github&amp;utm_medium=pages&amp;utm_campaign=gemini-4-carbon&amp;utm_content=stability-pages-carbon">用临时限额 Key 检测接口</a>
     </section>
 
     <section class="notice" id="gemini-4-argon">
