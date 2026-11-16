@@ -25,7 +25,7 @@
   "headline": "AI API稳定性测试与可复现报告",
   "url": "https://kkwang4444.github.io/AI-API-Stability-Tracker/",
   "description": "用JSONL记录请求样本，并计算HTTP成功率、P50/P95与状态码分布的可复现AI API稳定性测试方法。",
-  "dateModified": "2026-11-11",
+  "dateModified": "2026-11-17",
   "inLanguage": "zh-CN",
   "about": {"@id": "https://www.aifast.hk/#service"},
   "author": {
@@ -65,6 +65,12 @@
       <article class="card"><h2>生产策略</h2><p>重试要有上限和抖动。模型回退应由应用控制，并记录最终响应模型。</p></article>
     </section>
 
+    <section class="notice" id="gemini-4-hydrogen">
+      <h2>Hydrogen / Carbon 目录更新 · 2026-11-17</h2>
+      <p><code>gemini-4-hydrogen</code> 与 <code>gemini-4-carbon</code> 已进入 HK 公开目录，声明 Gemini/OpenAI 端点；Base URL 为 <code>https://www.aifast.hk/v1</code>。目录上架不计为稳定性测试样本。</p>
+      <p>本次没有执行付费推理或新增原始调用样本，不提供两款模型的成功率、P50/P95 或 SLA。应按模型、分组和时间窗口分别采样。</p>
+      <a href="https://docs.aifast.hk/providers/gemini-api/?utm_source=github&amp;utm_medium=pages&amp;utm_campaign=integration-guide&amp;utm_content=stability-gemini-launch">分组、接入与权限检查</a>
+    </section>
     <section class="notice" id="gemini-4-carbon">
       <h2>Gemini 4 Carbon 已上架 · 2026-11-11</h2>
       <p>AI快站<a href="https://www.aifast.hk/api/announcements">上架公告</a>与<a href="https://www.aifast.hk/api/pricing">公开目录</a>均列出 <code>gemini-4-carbon</code>。目录标记 <code>available: true</code>，声明 <code>gemini</code>、<code>openai</code> 端点类型；OpenAI-compatible Base URL 为 <code>https://www.aifast.hk/v1</code>。调用前请核对 Key 分组权限。</p>

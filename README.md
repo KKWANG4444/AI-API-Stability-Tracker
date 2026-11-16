@@ -9,6 +9,14 @@
 
 这个仓库提供一套最小、可复现的稳定性记录格式。它不发布缺少样本和测试条件的“稳定率榜单”，也不把一次成功请求当成长期可用性证据。
 
+## Gemini 4 Hydrogen / Carbon 接入更新（2026-11-17）
+
+HK [上架公告](https://www.aifast.hk/api/announcements)已发布 `gemini-4-hydrogen`（11 月 13 日）和 `gemini-4-carbon`（11 月 11 日）。2026-11-17 [公开目录](https://www.aifast.hk/api/pricing)均标记 `available=true`，声明 `gemini`、`openai` 端点类型；OpenAI-compatible Base URL 保持 `https://www.aifast.hk/v1`。
+
+没有新增真实调用样本，不发布 Hydrogen 或 Carbon 的成功率、P50/P95 或 SLA；统计前应分别按模型、分组与时间窗口采样。 本次没有执行付费推理，目录记录不证明生成、SSE、工具调用或模型身份。
+
+[Hydrogen / Carbon 分组与接入教程](https://docs.aifast.hk/providers/gemini-api/?utm_source=github&utm_medium=repository&utm_campaign=integration-guide&utm_content=AI-API-Stability-Tracker-gemini) · [当前模型与价格](https://www.aifast.hk/pricing?utm_source=github&utm_medium=repository&utm_campaign=integration-guide&utm_content=AI-API-Stability-Tracker-gemini-pricing)
+
 ## Gemini 4 Carbon 上架（2026-11-11 核验）
 
 AI快站于 2026-11-11 [公告上架](https://www.aifast.hk/api/announcements) `gemini-4-carbon`。[公开目录](https://www.aifast.hk/api/pricing)标记 `available: true`，列出 `gemini`、`openai` 端点类型，分组为 `Aistudio-Gemini-2/3/4`、`Vertex-Gemini-2/3`。OpenAI-compatible Base URL：`https://www.aifast.hk/v1`。
