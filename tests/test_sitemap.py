@@ -1,9 +1,10 @@
 import json
 import unittest
-from datetime import date
+from datetime import date, datetime, time, timedelta, timezone
 from html.parser import HTMLParser
 from pathlib import Path
 from xml.etree import ElementTree
+from zoneinfo import ZoneInfo
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE = 'https://kkwang4444.github.io/AI-API-Stability-Tracker/'
@@ -34,7 +35,7 @@ class Page(HTMLParser):
             self.buffer = None
 
 
-def audit(xml):
+def audit(xml, now=None):
     entries = ElementTree.fromstring(xml).findall('s:url', NS)
     assert len(entries) == 1, 'Sitemap 页面数量异常'
     assert entries[0].findtext('s:loc', namespaces=NS) == BASE, 'Sitemap 地址错误'
@@ -42,7 +43,9 @@ def audit(xml):
     page.feed((ROOT / 'index.html').read_text(encoding='utf-8'))
     assert page.canonical == [BASE], 'Canonical 不一致'
     changed = date.fromisoformat(entries[0].findtext('s:lastmod', namespaces=NS))
-    assert changed <= date.today(), 'Sitemap 日期不能在未来'
+    # 无时区的发布日期按香港编辑时区解释，避免 UTC 午夜前误判。
+    today = (now or datetime.now(timezone.utc)).astimezone(ZoneInfo('Asia/Hong_Kong')).date()
+    assert changed <= today, 'Sitemap 日期不能在未来'
     modified = [date.fromisoformat(item['dateModified']) for item in page.schema if item.get('dateModified')]
     assert modified and changed == max(modified), 'Sitemap 日期与页面更新时间不一致'
 
@@ -59,6 +62,14 @@ class SitemapTests(unittest.TestCase):
 
     def test_current_sitemap(self):
         audit((ROOT / 'sitemap.xml').read_text(encoding='utf-8'))
+
+    def test_hong_kong_midnight_boundary(self):
+        xml = (ROOT / 'sitemap.xml').read_text(encoding='utf-8')
+        changed = date.fromisoformat(ElementTree.fromstring(xml).findtext('s:url/s:lastmod', namespaces=NS))
+        midnight = datetime.combine(changed, time(), timezone(timedelta(hours=8))).astimezone(timezone.utc)
+        audit(xml, now=midnight)
+        with self.assertRaisesRegex(AssertionError, '日期不能在未来'):
+            audit(xml, now=midnight - timedelta(seconds=1))
 
     def test_stale_date_rejected(self):
         tree = ElementTree.fromstring((ROOT / 'sitemap.xml').read_text(encoding='utf-8'))
